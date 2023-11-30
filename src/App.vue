@@ -30,7 +30,7 @@
                             <span class="text-primary dark:text-white text-2xl">FlowForge</span>
                         </a>
                     </div>
-                    <div class="fixed inset-x-0 top-0 z-50 flex h-14 items-center justify-between gap-12 px-4 transition sm:px-6 lg:left-72 lg:z-30 lg:px-8 xl:left-80 backdrop-blur-sm dark:backdrop-blur bg-white/[var(--bg-opacity-light)] dark:bg-zinc-900/[var(--bg-opacity-dark)]" style="--bg-opacity-light:0.5;--bg-opacity-dark:0.2">
+                    <div class="fixed inset-x-0 top-0 z-50 flex h-14 items-center justify-between gap-12 px-4 border-b border-gray-light dark:border-gray-dark transition sm:px-6 lg:left-72 lg:z-30 lg:px-8 xl:left-80 backdrop-blur-sm dark:backdrop-blur bg-white/[var(--bg-opacity-light)] dark:bg-zinc-800/[var(--bg-opacity-dark)]">
                         <div class="absolute inset-x-0 top-full h-px transition bg-zinc-900/7.5 dark:bg-white/7.5"></div>
                         <div class="hidden lg:block lg:max-w-md lg:flex-auto">
                             <div class="relative">
@@ -61,7 +61,7 @@
                                     <li><a class="text-sm leading-5 text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="#">Support</a></li>
                                 </ul>
                             </nav>
-                            <div class="hidden md:block md:h-5 md:w-px md:bg-zinc-900/10 md:dark:bg-white/15"></div>
+                            <div class="hidden md:block md:h-5 md:w-px md:bg-gray-light md:dark:bg-gray-dark"></div>
                             <div class="flex gap-4">
                                 <div class="contents lg:hidden">
                                     <button type="button" class="flex h-6 w-6 items-center justify-center rounded-md transition hover:bg-zinc-900/5 ui-not-focus-visible:outline-none dark:hover:bg-white/5 lg:hidden" aria-label="Find something...">
@@ -92,7 +92,7 @@
                                 <div class="relative mt-3 pl-2">
                                     <div class="absolute inset-x-0 top-0 bg-zinc-800/2.5 will-change-transform dark:bg-white/2.5" style="border-radius:8px;height:32px;top:0;opacity:0"></div>
                                     <div class="absolute inset-y-0 left-2 w-px bg-zinc-900/10 dark:bg-white/5"></div>
-                                    <div class="absolute left-2 h-6 w-px bg-primary" style="top:4px;opacity:1"></div>
+                                    <div class="absolute left-2 h-6 w-px bg-black dark:bg-white" style="top:4px;opacity:1"></div>
                                     <ul role="list" class="border-l border-transparent">
                                         <li class="relative">
                                             <a aria-current="page" class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-4 text-zinc-900 dark:text-white" href="/">
@@ -131,6 +131,11 @@
                                                         <span class="truncate">Project Categories</span>
                                                     </a>
                                                 </li>
+                                                <li>
+                                                    <a class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-7 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/#project_categories">
+                                                        <span class="truncate">Assigned to Me</span>
+                                                    </a>
+                                                </li>
                                             </ul>
                                         </li>
                                         <li class="relative">
@@ -141,6 +146,11 @@
                                                 <li>
                                                     <a class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-7 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/#all_issues">
                                                         <span class="truncate">All Issues</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-7 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/#all_issues">
+                                                        <span class="truncate">Assigned to Me</span>
                                                     </a>
                                                 </li>
                                                 <li>
@@ -202,7 +212,7 @@
                                                 </svg>
                                             </div>
                                             <h3 class="mt-4 text-sm font-semibold leading-7 text-zinc-900 dark:text-white">
-                                                <a href="/project-1"><span class="absolute inset-0 rounded-2xl"></span>Project 2</a>
+                                                <a href="/project-2"><span class="absolute inset-0 rounded-2xl"></span>Project 2</a>
                                             </h3>
                                             <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Learn about the contact model and how to create, retrieve, update, delete, and list contacts.</p>
                                         </div>
@@ -215,7 +225,7 @@
                                                 </svg>
                                             </div>
                                             <h3 class="mt-4 text-sm font-semibold leading-7 text-zinc-900 dark:text-white">
-                                                <a href="/project-1"><span class="absolute inset-0 rounded-2xl"></span>Project 3</a>
+                                                <a href="/project-3"><span class="absolute inset-0 rounded-2xl"></span>Project 3</a>
                                             </h3>
                                             <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Learn about the contact model and how to create, retrieve, update, delete, and list contacts.</p>
                                         </div>
@@ -228,7 +238,7 @@
                                                 </svg>
                                             </div>
                                             <h3 class="mt-4 text-sm font-semibold leading-7 text-zinc-900 dark:text-white">
-                                                <a href="/project-1"><span class="absolute inset-0 rounded-2xl"></span>Project 4</a>
+                                                <a href="/project-4"><span class="absolute inset-0 rounded-2xl"></span>Project 4</a>
                                             </h3>
                                             <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Learn about the contact model and how to create, retrieve, update, delete, and list contacts.</p>
                                         </div>
