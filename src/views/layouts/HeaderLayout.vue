@@ -1,13 +1,36 @@
 <script setup lang="ts">
-    import { onMounted } from 'vue';
+    import { ref, onMounted, onBeforeUnmount } from 'vue';
+
+    const isMenuOpen = ref(false);
+
+    onBeforeUnmount(() => {
+        window.removeEventListener('resize', checkScreenSize);
+    });
 
     onMounted(() => {
+        window.addEventListener('resize', checkScreenSize);
+        checkScreenSize();
         if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
         } else {
             document.documentElement.classList.remove('dark');
         }
     });
+
+    const checkScreenSize = (): void => {
+        if (window.innerWidth >= 1024) {
+            isMenuOpen.value = false;
+        }
+    };
+
+    const toggleMenu = (): void => {
+        isMenuOpen.value = !isMenuOpen.value;
+        if (isMenuOpen.value) {
+            document.documentElement.classList.add('overflow-hidden');
+        } else {
+            document.documentElement.classList.remove('overflow-hidden');
+        }
+    };
 
     const toggleTheme = (): void => {
         if (document.documentElement.classList.contains('dark')) {
@@ -28,7 +51,7 @@
                     <span class="text-primary dark:text-white text-2xl">FlowForge</span>
                 </a>
             </div>
-            <div class="fixed inset-x-0 top-0 z-50 flex h-14 items-center justify-between gap-12 px-4 border-b border-gray-light dark:border-gray-dark transition sm:px-6 lg:left-72 lg:z-30 lg:px-8 xl:left-80 backdrop-blur-sm dark:backdrop-blur bg-white/[var(--bg-opacity-light)] dark:bg-zinc-800/[var(--bg-opacity-dark)]">
+            <div class="fixed inset-x-0 top-0 z-50 flex h-14 items-center justify-between gap-4 px-4 border-b border-gray-light dark:border-gray-dark transition sm:px-6 lg:left-72 lg:z-30 lg:px-8 xl:left-80 backdrop-blur-sm dark:backdrop-blur bg-white/[var(--bg-opacity-light)] dark:bg-zinc-800/[var(--bg-opacity-dark)]">
                 <div class="absolute inset-x-0 top-full h-px transition bg-zinc-900/7.5 dark:bg-white/7.5"></div>
                 <div class="hidden lg:block lg:max-w-md lg:flex-auto">
                     <div class="relative">
@@ -39,9 +62,12 @@
                     </div>
                 </div>
                 <div class="flex items-center gap-5 lg:hidden">
-                    <button type="button" class="flex h-6 w-6 items-center justify-center rounded-md transition hover:bg-zinc-900/5 dark:hover:bg-white/5" aria-label="Toggle navigation">
-                        <svg viewBox="0 0 10 9" fill="none" stroke-linecap="round" aria-hidden="true" class="w-2.5 stroke-zinc-900 dark:stroke-white">
-                            <path d="M.5 1h9M.5 8h9M.5 4.5h9"></path>
+                    <button type="button" class="flex h-6 w-6 items-center justify-center rounded-md transition hover:bg-zinc-900/5 dark:hover:bg-white/5" aria-label="Toggle navigation" @click="toggleMenu">
+                        <svg v-if="!isMenuOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 stroke-zinc-900 dark:stroke-white">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                        <svg v-else xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 stroke-zinc-900 dark:stroke-white">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
                     <a aria-label="Home" href="/">
@@ -80,14 +106,14 @@
                             </svg>
                         </button>
                     </div>
-                    <div>
-                        <img class="h-8 w-8 flex-none rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="fullName">
+                    <div class="flex h-8 w-8 hover:ring-4 hover:ring-zinc-900/5 dark:hover:ring-white/5 rounded-full cursor-pointer">
+                        <img class="h-8 w-8 rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="fullName">
                     </div>
                 </div>
             </div>
-            <nav class="hidden lg:mt-16 lg:block">
+            <nav :class="{ 'fixed top-14 left-0 h-screen w-screen max-w-sm overflow-y-auto bg-white dark:bg-zinc-800 border-r border-gray-light dark:border-gray-dark z-10 transition-transform': isMenuOpen, 'hidden translate-x-0': !isMenuOpen }" class="lg:block">
                 <ul role="list">
-                    <li class="relative mt-6 md:mt-0">
+                    <li class="relative my-10 lg:mt-16 pl-8 lg:pl-0 pb-8">
                         <h2 class="text-xs font-semibold text-gray-dark dark:text-gray-light">Navigation</h2>
                         <div class="relative mt-3 pl-2">
                             <div class="absolute inset-x-0 top-0 bg-zinc-800/2.5 will-change-transform dark:bg-white/2.5" style="border-radius:8px;height:32px;top:0;opacity:0"></div>
@@ -172,11 +198,6 @@
                                 </li>
                             </ul>
                         </div>
-                    </li>
-                    <li class="sticky bottom-0 z-10 mt-6 min-[416px]:hidden">
-                        <a class="inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition rounded-full bg-zinc-900 py-1 px-3 text-white hover:bg-zinc-700 dark:bg-primary dark:text-white dark:hover:bg-primary w-full" href="#">
-                            Sign Out
-                        </a>
                     </li>
                 </ul>
             </nav>
