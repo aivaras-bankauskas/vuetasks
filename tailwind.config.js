@@ -5,6 +5,15 @@ export default {
 		'./src/**/*.{vue,js,ts,jsx,tsx}'
 	],
 	theme: {
+		screens: {
+			'xxs': '350px',
+			'xs': '475px',
+			'sm': '640px',
+			'md': '768px',
+			'lg': '1024px',
+			'xl': '1280px',
+			'2xl': '1536px'
+		},
 		extend: {
 			colors: {
 				'primary': '#4f46e5',
