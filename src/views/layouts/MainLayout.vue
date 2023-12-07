@@ -4,6 +4,7 @@
     const SidebarMenu = defineAsyncComponent(() => import('@/views/layouts/SidebarMenu.vue'));
 
     const isMenuOpen = ref(false);
+    const isUserMenuOpen = ref(false);
     const isSearchbarShown = ref(false);
 
     onBeforeUnmount(() => {
@@ -23,6 +24,7 @@
     const checkScreenSize = (): void => {
         if (window.innerWidth >= 1024) {
             isMenuOpen.value = false;
+            isUserMenuOpen.value = false;
             document.documentElement.classList.remove('overflow-hidden');
         }
     };
@@ -34,6 +36,10 @@
         } else {
             document.documentElement.classList.remove('overflow-hidden');
         }
+    };
+
+    const toggleUserMenu = (): void => {
+        isUserMenuOpen.value = !isUserMenuOpen.value;
     };
 
     const showSearchbar = (): void => {
@@ -122,8 +128,31 @@
                             </svg>
                         </button>
                     </div>
-                    <div :class="{ 'hidden xxs:hidden sm:flex': isSearchbarShown }" class="hidden xxs:flex h-8 w-8 hover:ring-4 hover:ring-zinc-900/5 dark:hover:ring-white/5 rounded-full cursor-pointer">
-                        <img class="h-8 w-8 rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="fullName">
+                    <div :class="{ 'hidden xxs:hidden sm:flex': isSearchbarShown }" class="hidden xxs:flex lg:hidden h-8 w-8 hover:ring-4 hover:ring-zinc-900/5 dark:hover:ring-white/5 rounded-full cursor-pointer">
+                        <RouterLink to="/account">
+                            <img class="h-8 w-8 rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="Full Name">
+                        </RouterLink>
+                    </div>
+                    <div class="hidden lg:flex h-8 w-8 hover:ring-4 hover:ring-zinc-900/5 dark:hover:ring-white/5 rounded-full cursor-pointer">
+                        <img class="h-8 w-8 rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="Full Name" @click="toggleUserMenu">
+                    </div>
+                    <div v-if="isUserMenuOpen" class="absolute top-11 right-8 mt-2 rounded-md border border-gray-light dark:border-gray-dark bg-white dark:bg-zinc-800" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                        <button type="button" class="absolute top-1 right-3 h-5 w-5 rounded-md transition hover:bg-zinc-900/5 ui-not-focus-visible:outline-none dark:hover:bg-white/5" aria-label="Toggle User Menu" @click="toggleUserMenu">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 stroke-zinc-900 dark:stroke-white">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                        <div class="flex items-center ml-4 mt-3">
+                            <img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="avatar">
+                            <div class="flex flex-col">
+                                <div class="block px-4 text-sm text-gray-dark dark:text-gray-light w-48 truncate" role="menuitem">Aivaras Bankauskas</div>
+                                <div class="block px-4 text-xs text-primary dark:text-gray-light w-48 truncate" role="menuitem">aivarasbankauskas@gmail.com</div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between px-4 py-2">
+                            <RouterLink id="user-menu-profile" to="/account" class="text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white" role="menuitem" tabindex="-1" @click="toggleUserMenu">Account</RouterLink>
+                            <RouterLink id="user-menu-logout" to="/sign-out" class="text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white" role="menuitem" tabindex="-1" @click="toggleUserMenu">Sign Out</RouterLink>
+                        </div>
                     </div>
                 </div>
             </div>
