@@ -94,7 +94,7 @@
                                 </svg>
                             </button>
                         </div>
-                        <button type="button" class="flex h-6 w-6 items-center justify-center rounded-md transition hover:bg-zinc-900/5 dark:hover:bg-white/5" aria-label="Toggle theme" @click="toggleTheme">
+                        <button type="button" class="hidden xxs:flex h-6 w-6 items-center justify-center rounded-md transition hover:bg-zinc-900/5 dark:hover:bg-white/5" aria-label="Toggle theme" @click="toggleTheme">
                             <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="h-5 w-5 stroke-zinc-900 dark:hidden">
                                 <path d="M12.5 10a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z"></path>
                                 <path stroke-linecap="round" d="M10 5.5v-1M13.182 6.818l.707-.707M14.5 10h1M13.182 13.182l.707.707M10 15.5v-1M6.11 13.889l.708-.707M4.5 10h1M6.11 6.111l.708.707"></path>
@@ -109,7 +109,7 @@
                             </svg>
                         </button>
                     </div>
-                    <div class="flex h-8 w-8 hover:ring-4 hover:ring-zinc-900/5 dark:hover:ring-white/5 rounded-full cursor-pointer">
+                    <div class="hidden xxs:flex h-8 w-8 hover:ring-4 hover:ring-zinc-900/5 dark:hover:ring-white/5 rounded-full cursor-pointer">
                         <img class="h-8 w-8 rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="fullName">
                     </div>
                 </div>
@@ -117,8 +117,12 @@
             <nav class="hidden lg:block">
                 <SidebarMenu />
             </nav>
+            <div
+                :class="{ 'z-10 opacity-100': isMenuOpen, 'z-0 opacity-0': !isMenuOpen }"
+                class="fixed inset-0 top-14 bg-zinc-400/5 backdrop-blur-sm dark:bg-black/5 transition-all duration-300 lg:hidden">
+            </div>
             <nav
-                :class="{'translate-x-0 duration-300 ease-out': isMenuOpen, '-translate-x-full duration-300 ease-in': !isMenuOpen}"
+                :class="{ 'translate-x-0 duration-300 ease-out': isMenuOpen, '-translate-x-full duration-300 ease-in': !isMenuOpen }"
                 class="fixed top-14 left-0 h-screen w-screen max-w-sm overflow-y-auto bg-white dark:bg-zinc-800 border-r border-gray-light dark:border-gray-dark z-10 transition-transform lg:hidden"
             >
                 <SidebarMenu />
