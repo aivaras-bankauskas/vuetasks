@@ -66,7 +66,7 @@
         <div class="contents lg:pointer-events-auto lg:block lg:w-72 lg:overflow-y-auto lg:border-r lg:border-gray-light lg:px-6 lg:pb-8 lg:pt-3 lg:dark:border-white/10 xl:w-80">
             <div class="hidden lg:flex">
                 <RouterLink aria-label="Home" to="/">
-                    <span class="text-primary dark:text-white text-2xl">FlowForge</span>
+                    <span class="text-primary text-2xl">FlowForge</span>
                 </RouterLink>
             </div>
             <div class="fixed inset-x-0 top-0 z-50 flex h-14 items-center justify-between gap-4 px-4 border-b border-gray-light dark:border-gray-dark transition sm:px-6 lg:left-72 lg:z-30 lg:px-8 xl:left-80 backdrop-blur-sm dark:backdrop-blur bg-light/[var(--bg-opacity-light)] dark:bg-dark/[var(--bg-opacity-dark)]">
@@ -81,7 +81,7 @@
                         </svg>
                     </button>
                     <RouterLink :class="{ 'hidden': isSearchbarShown }" class="sm:block" aria-label="Home" to="/">
-                        <span class="text-primary dark:text-white text-xl">FlowForge</span>
+                        <span class="text-primary text-xl">FlowForge</span>
                     </RouterLink>
                 </div>
                 <div :class="{ 'hidden': !isSearchbarShown }" class="max-w-md flex-auto sm:block">
