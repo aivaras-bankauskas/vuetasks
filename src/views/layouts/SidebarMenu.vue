@@ -12,9 +12,9 @@
         <li class="relative border-b lg:border-none border-gray-light dark:border-gray-dark pb-6">
             <h2 class="text-sm font-semibold text-gray-dark dark:text-gray-light">Navigation</h2>
             <div class="relative mt-3 pl-2">
-                <div class="absolute inset-x-0 top-0 bg-zinc-800/2.5 will-change-transform dark:bg-white/2.5" style="border-radius:8px;height:32px;top:0;opacity:0"></div>
-                <div class="absolute inset-y-0 left-2 w-px bg-zinc-900/10 dark:bg-white/5"></div>
-                <div class="absolute left-2 h-6 w-px bg-black dark:bg-white" style="top:4px;opacity:1"></div>
+                <div class="absolute inset-x-0 top-0 bg-dark/2.5 will-change-transform dark:bg-light/2.5" style="border-radius:8px;height:32px;top:0;opacity:0"></div>
+                <div class="absolute inset-y-0 left-2 w-px bg-zinc-900/10 dark:bg-light/5"></div>
+                <div class="absolute left-2 h-6 w-px bg-black dark:bg-light" style="top:4px;opacity:1"></div>
                 <ul role="list" class="border-l border-transparent">
                     <li class="relative">
                         <RouterLink aria-current="page" class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-4 text-zinc-900 dark:text-white" to="/">
