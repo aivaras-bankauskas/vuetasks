@@ -1,5 +1,6 @@
 <script setup lang="ts">
-    import { defineAsyncComponent, ref, onMounted, onBeforeUnmount } from 'vue';
+    import { defineAsyncComponent, ref, onMounted, onBeforeUnmount, onUnmounted } from 'vue';
+    import eventBus from '@/utils/eventBus';
 
     const SidebarMenu = defineAsyncComponent(() => import('@/views/layouts/SidebarMenu.vue'));
 
@@ -12,6 +13,7 @@
     });
 
     onMounted(() => {
+        eventBus.on('toggleMenu', toggleMenu);
         window.addEventListener('resize', checkScreenSize);
         checkScreenSize();
         if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -19,6 +21,10 @@
         } else {
             document.documentElement.classList.remove('dark');
         }
+    });
+
+    onUnmounted(() => {
+        eventBus.off('toggleMenu', toggleMenu);
     });
 
     const checkScreenSize = (): void => {
@@ -167,7 +173,7 @@
                 :class="{ 'translate-x-0 duration-300 ease-out': isMenuOpen, '-translate-x-full duration-300 ease-in': !isMenuOpen }"
                 class="fixed top-14 left-0 h-screen w-screen max-w-sm overflow-y-auto bg-light dark:bg-dark border-r border-gray-light dark:border-gray-dark z-10 transition-transform lg:hidden"
             >
-                <SidebarMenu @toggle-theme="toggleTheme" />
+                <SidebarMenu @toggle-theme="toggleTheme" @toggle-menu="toggleMenu" />
             </nav>
         </div>
     </header>
