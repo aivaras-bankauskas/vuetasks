@@ -14,7 +14,7 @@
 </script>
 
 <template>
-    <div class="absolute top-11 right-8 mt-2 rounded-md border border-gray-light dark:border-gray-dark bg-light dark:bg-dark" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+    <div class="hidden lg:block absolute top-11 right-8 mt-2 rounded-md border border-gray-light dark:border-gray-dark bg-light dark:bg-dark" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
         <button type="button" class="absolute top-1 right-3 h-5 w-5 rounded-md transition hover:bg-zinc-900/5 ui-not-focus-visible:outline-none dark:hover:bg-light/5" aria-label="Toggle User Menu" @click="toggleUserMenu">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 stroke-zinc-900 dark:stroke-white">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
