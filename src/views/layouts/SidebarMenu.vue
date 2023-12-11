@@ -93,3 +93,9 @@
         </li>
     </ul>
 </template>
+
+<style scoped>
+.navbar-text {
+    @apply flex justify-between gap-2 py-1 pr-3 text-sm transition pl-4 text-zinc-900 dark:text-white;
+}
+</style>
