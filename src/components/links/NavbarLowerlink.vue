@@ -7,7 +7,10 @@
 </script>
 
 <template>
-    <RouterLink class="flex gap-x-3 justify-start items-center text-sm leading-5" :to="linkTo">
+    <RouterLink
+        class="flex gap-x-3 justify-start items-center text-sm leading-5" :to="linkTo"
+        active-class="text-primary dark:text-primary border-l border-primary dark:border-primary"
+    >
         <slot />
         <span>{{ title }}</span>
     </RouterLink>
