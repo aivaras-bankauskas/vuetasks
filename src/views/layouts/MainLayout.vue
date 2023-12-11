@@ -1,6 +1,6 @@
 <script setup lang="ts">
     import { defineAsyncComponent, ref, onMounted, onBeforeUnmount, onUnmounted } from 'vue';
-    import eventBus from '@/utils/eventBus';
+    import eventBus from '@/events/eventBus';
 
     const SidebarMenu = defineAsyncComponent(() => import('@/views/layouts/SidebarMenu.vue'));
 
