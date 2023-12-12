@@ -1,6 +1,7 @@
 <script setup lang="ts">
     import { ref, reactive } from 'vue';
     import UserAvatar from '@/components/avatar/UserAvatar.vue';
+    import SearchInput from '@/components/inputs/SearchInput.vue';
     import HamburgerIcon from '@/components/icons/HamburgerIcon.vue';
     import ThemeIcon from '@/components/icons/ThemeIcon.vue';
     import SearchIcon from '@/components/icons/SearchIcon.vue';
@@ -41,27 +42,31 @@
             </RouterLink>
         </div>
         <div :class="{ 'hidden': !isSearchbarShown }" class="max-w-md flex-auto sm:block">
-            <div class="relative">
-                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="absolute text-gray-dark dark:text-gray-light left-2 top-1/2 h-6 w-6 stroke-current transform -translate-y-1/2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12.01 12a4.25 4.25 0 1 0-6.02-6 4.25 4.25 0 0 0 6.02 6Zm0 0 3.24 3.25"></path>
-                </svg>
-                <input type="search" class="h-8 w-full rounded-xl bg-light pl-10 py-3 pr-3 text-zinc-500 dark:text-gray-light dark:placeholder-zinc-600 ring-1 ring-zinc-900/10 transition focus:outline-none focus:ring-1 focus:ring-gray-light dark:bg-light/5 dark:ring-inset dark:ring-white/10 lg:flex" placeholder="search something...">
-            </div>
+            <SearchInput />
         </div>
         <div class="flex items-center gap-5">
             <nav class="hidden lg:block">
                 <ul role="list" class="flex items-center gap-8">
-                    <li><RouterLink class="text-sm leading-5 text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" to="/documentation">Documentation</RouterLink></li>
-                    <li><RouterLink class="text-sm leading-5 text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" to="/support">Support</RouterLink></li>
+                    <li><RouterLink class="navbar-header-link" to="/documentation">Documentation</RouterLink></li>
+                    <li><RouterLink class="navbar-header-link" to="/support">Support</RouterLink></li>
                 </ul>
             </nav>
             <div class="hidden lg:block md:h-5 md:w-px md:bg-gray-light md:dark:bg-gray-dark"></div>
             <div class="flex gap-4">
                 <SearchIcon :is-searchbar-shown="isSearchbarShown" @show-searchbar="showSearchbar" @hide-searchbar="hideSearchbar" />
-                <ThemeIcon class="hidden md:block" light-class="stroke-zinc-900" dark-class="stroke-white" />
+                <ThemeIcon class="theme-icon-class" light-class="stroke-zinc-900" dark-class="stroke-white" />
                 <NotificationIcon :is-searchbar-shown="isSearchbarShown" />
             </div>
             <UserAvatar :is-searchbar-shown="isSearchbarShown" :data="data" />
         </div>
     </div>
 </template>
+
+<style scoped>
+    .navbar-header-link {
+        @apply text-sm leading-5 text-zinc-600 transition hover:text-primary dark:text-zinc-400 dark:hover:text-primary;
+    }
+    .theme-icon-class {
+        @apply hidden md:flex items-center justify-center h-6 w-6 rounded-md transition hover:bg-zinc-900/5 dark:hover:bg-light/5;
+    }
+</style>
