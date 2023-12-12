@@ -2,8 +2,7 @@
     import { computed, ref, reactive } from 'vue';
     import UserPopupCard from '@/components/cards/UserPopupCard.vue';
     import HamburgerButton from '@/components/buttons/HamburgerButton.vue';
-
-    const emit = defineEmits(['toggleTheme']);
+    import ThemeButton from '@/components/buttons/ThemeButton.vue';
 
     const data = reactive({
         companyName: 'FlowForge',
@@ -17,10 +16,6 @@
     const isSearchbarShown = ref(false);
 
     const fullName = computed(() => `${data.firstName} ${data.lastName}`);
-
-    const toggleTheme = (): void => {
-        emit('toggleTheme');
-    };
 
     const toggleUserMenu = (): void => {
         isUserMenuOpen.value = !isUserMenuOpen.value;
@@ -79,15 +74,7 @@
                         </svg>
                     </button>
                 </div>
-                <button type="button" class="hidden md:flex h-6 w-6 items-center justify-center rounded-md transition hover:bg-zinc-900/5 dark:hover:bg-light/5" aria-label="Toggle theme" @click="toggleTheme">
-                    <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="h-6 w-6 stroke-zinc-900 dark:hidden">
-                        <path d="M12.5 10a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z"></path>
-                        <path stroke-linecap="round" d="M10 5.5v-1M13.182 6.818l.707-.707M14.5 10h1M13.182 13.182l.707.707M10 15.5v-1M6.11 13.889l.708-.707M4.5 10h1M6.11 6.111l.708.707"></path>
-                    </svg>
-                    <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="hidden h-6 w-6 stroke-white dark:block">
-                        <path d="M15.224 11.724a5.5 5.5 0 0 1-6.949-6.949 5.5 5.5 0 1 0 6.949 6.949Z"></path>
-                    </svg>
-                </button>
+                <ThemeButton class="hidden md:block" light-class="stroke-zinc-900" dark-class="stroke-white" />
                 <button type="button" :class="{ 'hidden': isSearchbarShown }" class="sm:flex h-6 w-6 items-center justify-center rounded-md transition hover:bg-zinc-900/5 dark:hover:bg-light/5" aria-label="Notifications">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-gray-dark dark:text-gray-light">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
