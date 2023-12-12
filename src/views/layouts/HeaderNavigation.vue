@@ -3,10 +3,6 @@
     import UserPopupCard from '@/components/cards/UserPopupCard.vue';
     import HamburgerButton from '@/components/buttons/HamburgerButton.vue';
 
-    defineProps<{
-        isMenuOpen: boolean;
-    }>();
-
     const emit = defineEmits(['toggleTheme']);
 
     const data = reactive({
@@ -49,7 +45,7 @@
     <div class="fixed inset-x-0 top-0 z-50 flex h-14 items-center justify-between gap-4 px-4 border-b border-gray-light dark:border-gray-dark transition sm:px-6 lg:left-72 lg:z-30 lg:px-8 xl:left-80 backdrop-blur-sm dark:backdrop-blur bg-light/[var(--bg-opacity-light)] dark:bg-dark/[var(--bg-opacity-dark)]">
         <div class="absolute inset-x-0 top-full h-px transition bg-zinc-900/7.5 dark:bg-light/7.5"></div>
         <div class="flex items-center gap-5 lg:hidden">
-            <HamburgerButton :is-menu-open="isMenuOpen" />
+            <HamburgerButton />
             <RouterLink :class="{ 'hidden': isSearchbarShown }" class="sm:block lg:hidden" aria-label="Home" to="/">
                 <span class="text-primary text-xl">{{ data.companyName }}</span>
             </RouterLink>

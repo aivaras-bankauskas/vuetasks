@@ -1,15 +1,16 @@
 <script setup lang="ts">
-    import eventBus from '@/events/eventBus';
+    import { useToggleNavigation } from '@/store/toggleNavigation';
 
     defineProps<{
         title: string,
         linkTo: string,
     }>();
 
-    const toggleMenu = (): void => {
-        eventBus.emit('toggleMenu');
-    };
+    const toggleNavigation = useToggleNavigation();
 
+    const toggleMenu = (): void => {
+        toggleNavigation.closeNavigation();
+    };
 </script>
 
 <template>
