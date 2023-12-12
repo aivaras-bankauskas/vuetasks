@@ -7,6 +7,7 @@
     import SearchIcon from '@/components/icons/SearchIcon.vue';
     import NotificationIcon from '@/components/icons/NotificationIcon.vue';
     import CompanyNameLink from '@/components/links/CompanyNameLink.vue';
+    import NavbarHeaderLink from '@/components/links/NavbarHeaderLink.vue';
 
     const data = reactive({
         companyName: 'FlowForge',
@@ -44,8 +45,8 @@
         <div class="flex items-center gap-5">
             <nav class="hidden lg:block">
                 <ul role="list" class="flex items-center gap-8">
-                    <li><RouterLink class="navbar-header-link" to="/documentation">Documentation</RouterLink></li>
-                    <li><RouterLink class="navbar-header-link" to="/support">Support</RouterLink></li>
+                    <NavbarHeaderLink  title="API" link-to="/api" />
+                    <NavbarHeaderLink title="Documentation" link-to="/documentation" />
                 </ul>
             </nav>
             <div class="hidden lg:block md:h-5 md:w-px md:bg-gray-light md:dark:bg-gray-dark"></div>
@@ -60,9 +61,6 @@
 </template>
 
 <style scoped>
-    .navbar-header-link {
-        @apply text-sm leading-5 text-zinc-600 transition hover:text-primary dark:text-zinc-400 dark:hover:text-primary;
-    }
     .theme-icon-class {
         @apply hidden md:flex items-center justify-center h-6 w-6 rounded-md transition hover:bg-zinc-900/5 dark:hover:bg-light/5;
     }
