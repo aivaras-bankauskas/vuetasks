@@ -3,7 +3,7 @@
     import { useToggleNavigation } from '@/store/toggleNavigation';
 
     const HeaderNavigation = defineAsyncComponent(() => import('@/views/layouts/HeaderNavigation.vue'));
-    const SidebarMenu = defineAsyncComponent(() => import('@/views/layouts/SidebarMenu.vue'));
+    const SidebarNavigation = defineAsyncComponent(() => import('@/views/layouts/SidebarNavigation.vue'));
 
     const toggleNavigation = useToggleNavigation();
 
@@ -44,7 +44,7 @@
         <div class="contents lg:pointer-events-auto lg:block lg:w-72 lg:overflow-y-auto lg:border-r lg:border-gray-light lg:px-6 lg:pb-8 lg:pt-3 lg:dark:border-white/10 xl:w-80">
             <HeaderNavigation @toggle-theme="toggleTheme" />
             <nav class="hidden lg:block">
-                <SidebarMenu />
+                <SidebarNavigation />
             </nav>
             <div
                 :class="{
@@ -60,7 +60,7 @@
                 }"
                 class="fixed top-14 left-0 h-screen w-screen max-w-sm overflow-y-auto bg-light dark:bg-dark border-r border-gray-light dark:border-gray-dark z-10 transition-transform lg:hidden"
             >
-                <SidebarMenu @toggle-theme="toggleTheme" />
+                <SidebarNavigation @toggle-theme="toggleTheme" />
             </nav>
         </div>
     </header>
