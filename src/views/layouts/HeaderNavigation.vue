@@ -1,10 +1,10 @@
 <script setup lang="ts">
     import { computed, ref, reactive } from 'vue';
     import UserPopupCard from '@/components/cards/UserPopupCard.vue';
-    import HamburgerButton from '@/components/buttons/HamburgerButton.vue';
-    import ThemeButton from '@/components/buttons/ThemeButton.vue';
-    import SearchButton from '@/components/buttons/SearchButton.vue';
-    import NotificationButton from '@/components/buttons/NotificationButton.vue';
+    import HamburgerIcon from '@/components/icons/HamburgerIcon.vue';
+    import ThemeIcon from '@/components/icons/ThemeIcon.vue';
+    import SearchIcon from '@/components/icons/SearchIcon.vue';
+    import NotificationIcon from '@/components/icons/NotificationIcon.vue';
 
     const data = reactive({
         companyName: 'FlowForge',
@@ -42,7 +42,7 @@
     <div class="fixed inset-x-0 top-0 z-50 flex h-14 items-center justify-between gap-4 px-4 border-b border-gray-light dark:border-gray-dark transition sm:px-6 lg:left-72 lg:z-30 lg:px-8 xl:left-80 backdrop-blur-sm dark:backdrop-blur bg-light/[var(--bg-opacity-light)] dark:bg-dark/[var(--bg-opacity-dark)]">
         <div class="absolute inset-x-0 top-full h-px transition bg-zinc-900/7.5 dark:bg-light/7.5"></div>
         <div class="flex items-center gap-5 lg:hidden">
-            <HamburgerButton />
+            <HamburgerIcon />
             <RouterLink :class="{ 'hidden': isSearchbarShown }" class="sm:block lg:hidden" aria-label="Home" to="/">
                 <span class="text-primary text-xl">{{ data.companyName }}</span>
             </RouterLink>
@@ -64,9 +64,9 @@
             </nav>
             <div class="hidden lg:block md:h-5 md:w-px md:bg-gray-light md:dark:bg-gray-dark"></div>
             <div class="flex gap-4">
-                <SearchButton :is-searchbar-shown="isSearchbarShown" @show-searchbar="showSearchbar" @hide-searchbar="hideSearchbar" />
-                <ThemeButton class="hidden md:block" light-class="stroke-zinc-900" dark-class="stroke-white" />
-                <NotificationButton :is-searchbar-shown="isSearchbarShown" />
+                <SearchIcon :is-searchbar-shown="isSearchbarShown" @show-searchbar="showSearchbar" @hide-searchbar="hideSearchbar" />
+                <ThemeIcon class="hidden md:block" light-class="stroke-zinc-900" dark-class="stroke-white" />
+                <NotificationIcon :is-searchbar-shown="isSearchbarShown" />
             </div>
             <div :class="{ 'hidden xxs:hidden sm:flex': isSearchbarShown }" class="hidden xxs:flex lg:hidden h-8 w-8 hover:ring-4 hover:ring-zinc-900/5 dark:hover:ring-white/5 rounded-full cursor-pointer">
                 <RouterLink to="/account">

@@ -1,7 +1,7 @@
 <script setup lang="ts">
     import NavbarLink from '@/components/links/NavbarLink.vue';
     import NavbarLowerlink from '@/components/links/NavbarLowerlink.vue';
-    import ThemeButton from '@/components/buttons/ThemeButton.vue';
+    import ThemeIcon from '@/components/icons/ThemeIcon.vue';
 </script>
 
 <template>
@@ -51,10 +51,10 @@
             </NavbarLowerlink>
         </li>
         <li class="md:hidden relitive my-3 hover:text-primary">
-            <ThemeButton class="flex gap-x-3 justify-start items-center text-sm">
+            <ThemeIcon class="flex gap-x-3 justify-start items-center text-sm">
                 <span class="hidden dark:block text-sm">Dark Theme</span>
                 <span class="dark:hidden text-sm">Light Theme</span>
-            </ThemeButton>
+            </ThemeIcon>
         </li>
         <li class="lg:hidden relitive my-3 hover:text-primary">
             <NavbarLowerlink title="Documentation" link-to="/documentation">
