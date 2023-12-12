@@ -4,6 +4,7 @@
     import HamburgerButton from '@/components/buttons/HamburgerButton.vue';
     import ThemeButton from '@/components/buttons/ThemeButton.vue';
     import SearchButton from '@/components/buttons/SearchButton.vue';
+    import NotificationButton from '@/components/buttons/NotificationButton.vue';
 
     const data = reactive({
         companyName: 'FlowForge',
@@ -65,11 +66,7 @@
             <div class="flex gap-4">
                 <SearchButton :is-searchbar-shown="isSearchbarShown" @show-searchbar="showSearchbar" @hide-searchbar="hideSearchbar" />
                 <ThemeButton class="hidden md:block" light-class="stroke-zinc-900" dark-class="stroke-white" />
-                <button type="button" :class="{ 'hidden': isSearchbarShown }" class="sm:flex h-6 w-6 items-center justify-center rounded-md transition hover:bg-zinc-900/5 dark:hover:bg-light/5" aria-label="Notifications">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-gray-dark dark:text-gray-light">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
-                    </svg>
-                </button>
+                <NotificationButton :is-searchbar-shown="isSearchbarShown" />
             </div>
             <div :class="{ 'hidden xxs:hidden sm:flex': isSearchbarShown }" class="hidden xxs:flex lg:hidden h-8 w-8 hover:ring-4 hover:ring-zinc-900/5 dark:hover:ring-white/5 rounded-full cursor-pointer">
                 <RouterLink to="/account">
