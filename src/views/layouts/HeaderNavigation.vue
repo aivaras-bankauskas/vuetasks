@@ -1,6 +1,6 @@
 <script setup lang="ts">
-    import { computed, ref, reactive } from 'vue';
-    import UserPopupCard from '@/components/cards/UserPopupCard.vue';
+    import { ref, reactive } from 'vue';
+    import UserAvatar from '@/components/avatar/UserAvatar.vue';
     import HamburgerIcon from '@/components/icons/HamburgerIcon.vue';
     import ThemeIcon from '@/components/icons/ThemeIcon.vue';
     import SearchIcon from '@/components/icons/SearchIcon.vue';
@@ -8,20 +8,13 @@
 
     const data = reactive({
         companyName: 'FlowForge',
-        firstName: 'Aivaras',
-        lastName: 'Bankauskas',
-        email: 'aivarasbankauskas@gmail.com',
+        firstName: 'Tom',
+        lastName: 'Cook',
+        email: 'tom.cook@example.com',
         avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
     });
 
-    const isUserMenuOpen = ref(false);
     const isSearchbarShown = ref(false);
-
-    const fullName = computed(() => `${data.firstName} ${data.lastName}`);
-
-    const toggleUserMenu = (): void => {
-        isUserMenuOpen.value = !isUserMenuOpen.value;
-    };
 
     const showSearchbar = (): void => {
         isSearchbarShown.value = true;
@@ -68,15 +61,7 @@
                 <ThemeIcon class="hidden md:block" light-class="stroke-zinc-900" dark-class="stroke-white" />
                 <NotificationIcon :is-searchbar-shown="isSearchbarShown" />
             </div>
-            <div :class="{ 'hidden xxs:hidden sm:flex': isSearchbarShown }" class="hidden xxs:flex lg:hidden h-8 w-8 hover:ring-4 hover:ring-zinc-900/5 dark:hover:ring-white/5 rounded-full cursor-pointer">
-                <RouterLink to="/account">
-                    <img class="h-8 w-8 rounded-full bg-gray-50" :src="data.avatar" alt="Full Name">
-                </RouterLink>
-            </div>
-            <div class="hidden lg:flex h-8 w-8 hover:ring-4 hover:ring-zinc-900/5 dark:hover:ring-white/5 rounded-full cursor-pointer">
-                <img class="h-8 w-8 rounded-full bg-gray-50" :src="data.avatar" alt="Full Name" @click="toggleUserMenu">
-            </div>
-            <UserPopupCard v-if="isUserMenuOpen" :full-name="fullName" :email="data.email" :avatar="data.avatar" @toggle-user-menu="toggleUserMenu" />
+            <UserAvatar :is-searchbar-shown="isSearchbarShown" :data="data" />
         </div>
     </div>
 </template>
