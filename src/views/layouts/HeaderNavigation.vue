@@ -6,6 +6,7 @@
     import ThemeIcon from '@/components/icons/ThemeIcon.vue';
     import SearchIcon from '@/components/icons/SearchIcon.vue';
     import NotificationIcon from '@/components/icons/NotificationIcon.vue';
+    import CompanyNameLink from '@/components/links/CompanyNameLink.vue';
 
     const data = reactive({
         companyName: 'FlowForge',
@@ -29,17 +30,13 @@
 
 <template>
     <div class="hidden lg:flex">
-        <RouterLink aria-label="Home" to="/">
-            <span class="text-primary text-2xl">{{ data.companyName }}</span>
-        </RouterLink>
+        <CompanyNameLink :data="data" link-to="/" span-class="text-2xl" />
     </div>
     <div class="fixed inset-x-0 top-0 z-50 flex h-14 items-center justify-between gap-4 px-4 border-b border-gray-light dark:border-gray-dark transition sm:px-6 lg:left-72 lg:z-30 lg:px-8 xl:left-80 backdrop-blur-sm dark:backdrop-blur bg-light/[var(--bg-opacity-light)] dark:bg-dark/[var(--bg-opacity-dark)]">
         <div class="absolute inset-x-0 top-full h-px transition bg-zinc-900/7.5 dark:bg-light/7.5"></div>
         <div class="flex items-center gap-5 lg:hidden">
             <HamburgerIcon />
-            <RouterLink :class="{ 'hidden': isSearchbarShown }" class="sm:block lg:hidden" aria-label="Home" to="/">
-                <span class="text-primary text-xl">{{ data.companyName }}</span>
-            </RouterLink>
+            <CompanyNameLink :data="data" link-to="/" span-class="text-xl" />
         </div>
         <div :class="{ 'hidden': !isSearchbarShown }" class="max-w-md flex-auto sm:block">
             <SearchInput />
