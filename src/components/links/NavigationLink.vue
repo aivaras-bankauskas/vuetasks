@@ -1,5 +1,6 @@
 <script setup lang="ts">
     import { useToggleStore } from '@/store/toggleStore';
+    import useCheckScreenSize from '@/composables/useCheckScreenSize';
     import { computed } from 'vue';
 
     const props = defineProps({
@@ -34,18 +35,22 @@
     });
 
     const toggleStore = useToggleStore();
+    const { isDesktopScreen } = useCheckScreenSize();
 
     const borderClass = computed(() => {
         return props.showBorderIfActive ? 'border-l border-primary dark:border-primary' : '';
     });
 
     const closeNavigation = (): void => {
+        if (isDesktopScreen.value) {
+            return;
+        }
         toggleStore.closeNavigation();
     };
 </script>
 
 <template>
-    <li :class="listClass" @click="closeNavigation">
+    <li :class="listClass" tabindex="0" @click="closeNavigation">
         <RouterLink
             :class="[baseClass, textColor]"
             :active-class="`${activeText} ${borderClass}`"
