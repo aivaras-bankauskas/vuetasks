@@ -43,11 +43,11 @@
             </nav>
             <div class="hidden lg:block md:h-5 md:w-px md:bg-gray-light md:dark:bg-gray-dark"></div>
             <div class="flex gap-4">
-                <SearchIcon :is-searchbar-shown="toggleStore.isSearchShown" />
+                <SearchIcon />
                 <ThemeIcon class="theme-icon-class" light-class="stroke-zinc-900" dark-class="stroke-white" />
-                <NotificationIcon :is-searchbar-shown="toggleStore.isSearchShown" />
+                <NotificationIcon :class="{ 'hidden': toggleStore.isSearchShown }" />
             </div>
-            <UserAvatar :is-searchbar-shown="toggleStore.isSearchShown" :data="data" />
+            <UserAvatar :data="data" />
         </div>
     </div>
 </template>
