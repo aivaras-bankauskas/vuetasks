@@ -37,7 +37,7 @@
         <div class="flex items-center gap-5">
             <nav class="hidden lg:block">
                 <ul role="list" class="flex items-center gap-8 text-zinc-600 dark:text-zinc-400">
-                    <NavigationLink  title="API" link-to="/api" base-class="text-sm leading-5" />
+                    <NavigationLink title="API" link-to="/api" base-class="text-sm leading-5" />
                     <NavigationLink title="Documentation" link-to="/documentation" base-class="text-sm leading-5" />
                 </ul>
             </nav>

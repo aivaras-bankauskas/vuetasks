@@ -3,7 +3,7 @@
         <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="search-icon">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12.01 12a4.25 4.25 0 1 0-6.02-6 4.25 4.25 0 0 0 6.02 6Zm0 0 3.24 3.25"></path>
         </svg>
-        <input type="search" class="search-input" placeholder="search something...">
+        <input type="search" class="search-input" placeholder="Search something..." aria-label="Search">
     </div>
 </template>
 

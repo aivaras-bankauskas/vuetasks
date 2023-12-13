@@ -21,13 +21,13 @@
         </div>
     </div>
     <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-        <p class="text-sm leading-6 text-gray-900 dark:text-gray-light">Director of Product</p>
+        <p class="text-sm leading-6 text-gray-900 dark:text-gray-light">{{ position }}</p>
         <div v-if="onlineStatus === 'online'" class="mt-1 flex items-center gap-x-1.5">
             <div class="flex-none rounded-full bg-emerald-500/20 p-1">
                 <div class="h-1.5 w-1.5 rounded-full bg-emerald-500"></div>
             </div>
             <p class="text-xs leading-5 text-zinc-900 dark:text-zinc-400">Online</p>
         </div>
-        <p v-else class="mt-1 text-xs leading-5 text-zinc-900 dark:text-zinc-400">Last seen <time datetime="2023-01-23T13:23Z">{{ onlineStatus }} ago</time></p>
+        <p v-else class="mt-1 text-xs leading-5 text-zinc-900 dark:text-zinc-400">Last seen <time :datetime="onlineStatus">{{ onlineStatus }} ago</time></p>
     </div>
 </template>

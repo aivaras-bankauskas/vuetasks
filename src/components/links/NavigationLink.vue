@@ -42,20 +42,20 @@
     });
 
     const closeNavigation = (): void => {
-        if (isDesktopScreen.value) {
-            return;
+        if (!isDesktopScreen.value) {
+            toggleStore.closeNavigation();
         }
-        toggleStore.closeNavigation();
     };
 </script>
 
 <template>
-    <li :class="listClass" tabindex="0" @click="closeNavigation">
+    <li :class="listClass">
         <RouterLink
             :class="[baseClass, textColor]"
             :active-class="`${activeText} ${borderClass}`"
-            :exact-active-class="`${activeText} ${borderClass}`"
             :to="linkTo"
+            tabindex="0"
+            @click="closeNavigation"
         >
             <slot />
             <span>{{ title }}</span>

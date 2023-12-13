@@ -10,10 +10,9 @@
 
 <template>
     <RouterLink
-        aria-label="Home"
+        :aria-label="`Go to ${data.companyName} page`"
         class="sm:block text-primary dark:text-primary"
         active-class="text-primary dark:text-primary"
-        exact-active-class="text-primary dark:text-primary"
         :to="linkTo"
     >
         <span :class="spanClass">{{ data.companyName }}</span>
