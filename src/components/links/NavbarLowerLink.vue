@@ -14,14 +14,15 @@
 </script>
 
 <template>
-    <li @click="toggleMenu">
+    <div @click="toggleMenu">
         <RouterLink
-            class="hover:text-primary flex justify-between gap-2 py-1 pr-3 text-sm transition pl-7"
-            active-class="text-primary dark:text-primary border-l border-primary dark:border-primary"
-            exact-active-class="text-primary dark:text-primary border-l border-primary dark:border-primary"
+            class="flex gap-x-3 justify-start items-center text-sm leading-5"
+            active-class="text-primary dark:text-primary"
+            exact-active-class="text-primary dark:text-primary"
             :to="linkTo"
         >
-            <span class="truncate">{{ title }}</span>
+            <slot />
+            <span>{{ title }}</span>
         </RouterLink>
-    </li>
+    </div>
 </template>
