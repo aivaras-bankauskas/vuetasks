@@ -37,7 +37,7 @@
         <div class="absolute inset-x-0 top-full h-px transition bg-zinc-900/7.5 dark:bg-light/7.5"></div>
         <div class="flex items-center gap-5 lg:hidden">
             <HamburgerIcon />
-            <CompanyNameLink :data="data" link-to="/" span-class="text-xl" />
+            <CompanyNameLink :data="data" link-to="/" :class="{ 'hidden': isSearchbarShown }" span-class="text-xl" />
         </div>
         <div :class="{ 'hidden': !isSearchbarShown }" class="max-w-md flex-auto sm:block">
             <SearchInput />

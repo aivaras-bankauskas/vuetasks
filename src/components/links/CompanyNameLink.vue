@@ -11,7 +11,7 @@
 <template>
     <RouterLink
         aria-label="Home"
-        class="text-primary dark:text-primary"
+        class="sm:block text-primary dark:text-primary"
         active-class="text-primary dark:text-primary"
         exact-active-class="text-primary dark:text-primary"
         :to="linkTo"
