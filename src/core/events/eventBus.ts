@@ -1,6 +1,6 @@
 import { reactive, readonly } from 'vue';
 
-type EventCallback = (...args: string[]) => void;
+type EventCallback = (...args: unknown[]) => void;
 type EventRecord = Record<string, EventCallback[]>;
 
 const state = reactive<EventRecord>({});
@@ -22,7 +22,7 @@ const off = (event: string, callback: EventCallback): void => {
 	}
 };
 
-const emit = (event: string, ...args: string[]): void => {
+const emit = (event: string, ...args: unknown[]): void => {
 	const callbacks = state[event];
 	if (callbacks) {
 		callbacks.forEach((callback) => {

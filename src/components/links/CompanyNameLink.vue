@@ -9,7 +9,12 @@
 </script>
 
 <template>
-    <RouterLink aria-label="Home" :to="linkTo">
-        <span class="text-primary" :class="spanClass">{{ data.companyName }}</span>
+    <RouterLink
+        :aria-label="`Go to ${data.companyName} page`"
+        class="sm:block text-primary dark:text-primary"
+        active-class="text-primary dark:text-primary"
+        :to="linkTo"
+    >
+        <span :class="spanClass">{{ data.companyName }}</span>
     </RouterLink>
 </template>

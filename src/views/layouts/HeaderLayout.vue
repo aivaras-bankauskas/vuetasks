@@ -1,5 +1,6 @@
 <script setup lang="ts">
-    import { ref, reactive } from 'vue';
+    import { reactive } from 'vue';
+    import { useToggleStore } from '@/store/toggleStore';
     import UserAvatar from '@/components/avatar/UserAvatar.vue';
     import SearchInput from '@/components/inputs/SearchInput.vue';
     import HamburgerIcon from '@/components/icons/HamburgerIcon.vue';
@@ -7,7 +8,7 @@
     import SearchIcon from '@/components/icons/SearchIcon.vue';
     import NotificationIcon from '@/components/icons/NotificationIcon.vue';
     import CompanyNameLink from '@/components/links/CompanyNameLink.vue';
-    import NavbarHeaderLink from '@/components/links/NavbarHeaderLink.vue';
+    import NavigationLink from '@/components/links/NavigationLink.vue';
 
     const data = reactive({
         companyName: 'FlowForge',
@@ -17,16 +18,7 @@
         avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
     });
 
-    const isSearchbarShown = ref(false);
-
-    const showSearchbar = (): void => {
-        isSearchbarShown.value = true;
-    };
-
-    const hideSearchbar = (): void => {
-        isSearchbarShown.value = false;
-    };
-
+    const toggleStore = useToggleStore();
 </script>
 
 <template>
@@ -37,25 +29,25 @@
         <div class="absolute inset-x-0 top-full h-px transition bg-zinc-900/7.5 dark:bg-light/7.5"></div>
         <div class="flex items-center gap-5 lg:hidden">
             <HamburgerIcon />
-            <CompanyNameLink :data="data" link-to="/" span-class="text-xl" />
+            <CompanyNameLink :data="data" link-to="/" :class="{ 'hidden': toggleStore.isSearchShown }" span-class="text-xl" />
         </div>
-        <div :class="{ 'hidden': !isSearchbarShown }" class="max-w-md flex-auto sm:block">
+        <div :class="{ 'hidden': !toggleStore.isSearchShown }" class="max-w-md flex-auto sm:block">
             <SearchInput />
         </div>
         <div class="flex items-center gap-5">
             <nav class="hidden lg:block">
-                <ul role="list" class="flex items-center gap-8">
-                    <NavbarHeaderLink  title="API" link-to="/api" />
-                    <NavbarHeaderLink title="Documentation" link-to="/documentation" />
+                <ul role="list" class="flex items-center gap-8 text-zinc-600 dark:text-zinc-400">
+                    <NavigationLink title="API" link-to="/api" base-class="text-sm leading-5" />
+                    <NavigationLink title="Documentation" link-to="/documentation" base-class="text-sm leading-5" />
                 </ul>
             </nav>
             <div class="hidden lg:block md:h-5 md:w-px md:bg-gray-light md:dark:bg-gray-dark"></div>
             <div class="flex gap-4">
-                <SearchIcon :is-searchbar-shown="isSearchbarShown" @show-searchbar="showSearchbar" @hide-searchbar="hideSearchbar" />
+                <SearchIcon />
                 <ThemeIcon class="theme-icon-class" light-class="stroke-zinc-900" dark-class="stroke-white" />
-                <NotificationIcon :is-searchbar-shown="isSearchbarShown" />
+                <NotificationIcon :class="{ 'hidden': toggleStore.isSearchShown }" />
             </div>
-            <UserAvatar :is-searchbar-shown="isSearchbarShown" :data="data" />
+            <UserAvatar :data="data" />
         </div>
     </div>
 </template>
