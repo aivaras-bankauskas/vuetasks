@@ -1,27 +1,14 @@
 <script setup lang="ts">
-    import { defineAsyncComponent, onMounted, onBeforeUnmount } from 'vue';
-    import { useToggleNavigation } from '@/store/toggleNavigation';
+    import { defineAsyncComponent } from 'vue';
+    import { useToggleStore } from '@/store/toggleStore';
+    import useCheckScreenSize from '@/composables/useCheckScreenSize';
 
     const HeaderLayout = defineAsyncComponent(() => import('@/views/layouts/HeaderLayout.vue'));
     const SidebarLayout = defineAsyncComponent(() => import('@/views/layouts/SidebarLayout.vue'));
 
-    const toggleNavigation = useToggleNavigation();
+    useCheckScreenSize();
 
-    onBeforeUnmount(() => {
-        window.removeEventListener('resize', checkScreenSize);
-    });
-
-    onMounted(() => {
-        window.addEventListener('resize', checkScreenSize);
-        checkScreenSize();
-    });
-
-    const checkScreenSize = (): void => {
-        if (window.innerWidth >= 1024) {
-            toggleNavigation.closeNavigation();
-            document.documentElement.classList.remove('overflow-hidden');
-        }
-    };
+    const toggleStore = useToggleStore();
 </script>
 
 <template>
@@ -32,11 +19,11 @@
                 <SidebarLayout />
             </nav>
             <div
-                :class="{ 'z-10 opacity-100': toggleNavigation.isNavigationOpen, 'z-0 opacity-0': !toggleNavigation.isNavigationOpen }"
+                :class="{ 'z-10 opacity-100': toggleStore.isNavigationOpen, 'z-0 opacity-0': !toggleStore.isNavigationOpen }"
                 class="fixed inset-0 top-14 bg-zinc-400/5 backdrop-blur-sm dark:bg-black/5 transition-all duration-300 lg:hidden">
             </div>
             <nav
-                :class="{ 'translate-x-0 duration-300 ease-out': toggleNavigation.isNavigationOpen, '-translate-x-full duration-300 ease-in': !toggleNavigation.isNavigationOpen }"
+                :class="{ 'translate-x-0 duration-300 ease-out': toggleStore.isNavigationOpen, '-translate-x-full duration-300 ease-in': !toggleStore.isNavigationOpen }"
                 class="fixed top-14 left-0 h-screen w-screen max-w-sm overflow-y-auto bg-light dark:bg-dark border-r border-gray-light dark:border-gray-dark z-10 transition-transform lg:hidden"
             >
                 <SidebarLayout />

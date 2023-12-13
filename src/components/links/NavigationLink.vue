@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import { useToggleNavigation } from '@/store/toggleNavigation';
+    import { useToggleStore } from '@/store/toggleStore';
     import { computed } from 'vue';
 
     const props = defineProps({
@@ -33,19 +33,19 @@
         }
     });
 
-    const toggleNavigation = useToggleNavigation();
+    const toggleStore = useToggleStore();
 
     const borderClass = computed(() => {
         return props.showBorderIfActive ? 'border-l border-primary dark:border-primary' : '';
     });
 
-    const toggleMenu = (): void => {
-        toggleNavigation.closeNavigation();
+    const closeNavigation = (): void => {
+        toggleStore.closeNavigation();
     };
 </script>
 
 <template>
-    <li :class="listClass" @click="toggleMenu">
+    <li :class="listClass" @click="closeNavigation">
         <RouterLink
             :class="[baseClass, textColor]"
             :active-class="`${activeText} ${borderClass}`"

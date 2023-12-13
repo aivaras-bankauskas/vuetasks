@@ -1,9 +1,11 @@
 import { defineStore } from 'pinia';
 
-export const useToggleNavigation = defineStore({
-	id: 'toggleNavigation',
+export const useToggleStore = defineStore({
+	id: 'toggle',
 	state: () => ({
-		isNavigationOpen: false
+		isNavigationOpen: false,
+		isUserPopupOpen: false,
+		isSearchShown: false
 	}),
 	actions: {
 		toggleNavigation() {
@@ -17,6 +19,18 @@ export const useToggleNavigation = defineStore({
 		closeNavigation() {
 			this.isNavigationOpen = false;
 			document.body.classList.remove('overflow-hidden');
+		},
+		toggleUserPopup() {
+			this.isUserPopupOpen = !this.isUserPopupOpen;
+		},
+		closeUserPopup() {
+			this.isUserPopupOpen = false;
+		},
+		showSearchInput() {
+			this.isSearchShown = true;
+		},
+		hideSearchInput() {
+			this.isSearchShown = false;
 		}
 	}
 });
