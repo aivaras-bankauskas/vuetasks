@@ -13,27 +13,22 @@
         },
         listClass: {
             type: String,
-            required: false,
             default: ''
         },
         baseClass: {
             type: String,
-            required: false,
             default: 'flex justify-between gap-2 py-1 pr-3 text-sm transition pl-7'
         },
         textColor: {
             type: String,
-            required: false,
             default: 'text-inherit hover:text-primary'
         },
         activeText: {
             type: String,
-            required: false,
             default: 'text-primary dark:text-primary'
         },
         showBorderIfActive: {
             type: Boolean,
-            required: false,
             default: false
         }
     });
