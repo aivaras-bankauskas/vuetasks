@@ -6,3 +6,7 @@ input:focus {
     outline: none;
     box-shadow: none;
 }
+
+.link-color {
+    @apply text-color-light/70 dark:text-color-dark/50 hover:text-color-light dark:hover:text-color-dark;
+}
