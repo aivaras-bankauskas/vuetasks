@@ -26,12 +26,12 @@
             <img class="h-12 w-12 rounded-full" :src="avatar" :alt="`${fullName}`">
             <div class="flex flex-col">
                 <h4 class="block px-4 text-sm text-color-light dark:text-color-dark w-48 truncate">{{ fullName }}</h4>
-                <a :href="`mailto:${email}`" class="block px-4 text-xs link-color w-48 truncate" @click="closeUserPopup">{{ email }}</a>
+                <a :href="`mailto:${email}`" class="block px-4 text-xs link-hover w-48 truncate" @click="closeUserPopup">{{ email }}</a>
             </div>
         </div>
         <nav class="flex justify-between px-4 py-2">
-            <RouterLink to="/account" class="text-sm link-color" role="menuitem" @click="closeUserPopup">Account</RouterLink>
-            <RouterLink to="/sign-out" class="text-sm link-color" role="menuitem" @click="closeUserPopup">Sign Out</RouterLink>
+            <RouterLink to="/account" class="text-sm link-hover" role="menuitem" @click="closeUserPopup">Account</RouterLink>
+            <RouterLink to="/sign-out" class="text-sm link-hover" role="menuitem" @click="closeUserPopup">Sign Out</RouterLink>
         </nav>
     </div>
 </template>

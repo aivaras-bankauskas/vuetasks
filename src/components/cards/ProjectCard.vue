@@ -24,7 +24,7 @@
                 </h3>
             </header>
             <section>
-                <p class="mt-1 text-sm text-color-light/70 dark:text-color-dark/50">{{ description }}</p>
+                <p class="mt-1 text-sm link">{{ description }}</p>
             </section>
         </div>
     </article>

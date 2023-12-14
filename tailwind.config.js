@@ -16,18 +16,23 @@ export default {
 		},
 		extend: {
 			colors: {
+				'body-light': '#e4e4e7',
+				'body-dark': '#000000',
+				'divider-light': '#d4d4d8',
+				'divider-dark': '#27272a',
+				'color-light': '#000000',
+				'color-dark': '#ffffff',
+				'link-light': '#000000',
+				'link-dark': '#ffffff',
 				'light': '#ffffff',
-				'dark': '#27272a',
+				'dark': '#18181b',
 				'primary': '#34D399',
 				'secondary': '#9ca3af',
 				'success': '#22c55e',
 				'danger': '#e05263',
 				'danger-light': '#fb7185',
 				'warning': '#f97316',
-				'info': '#0284c7',
-				'gray-dark': '#3f3f46',
-				'gray': '#52525b',
-				'gray-light': '#e4e4e7'
+				'info': '#0284c7'
 			  }
 		}
 	},

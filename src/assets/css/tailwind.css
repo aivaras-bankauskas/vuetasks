@@ -7,6 +7,14 @@ input:focus {
     box-shadow: none;
 }
 
-.link-color {
-    @apply text-color-light/70 dark:text-color-dark/50 hover:text-color-light dark:hover:text-color-dark;
+.link {
+    @apply text-link-light/70 dark:text-link-dark/60;
+}
+
+.link-hover {
+    @apply link hover:text-link-light dark:hover:text-link-dark;
+}
+
+.link-hover-primary {
+    @apply link hover:text-primary dark:hover:text-primary;
 }

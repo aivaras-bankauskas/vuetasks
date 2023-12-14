@@ -12,7 +12,7 @@
 </script>
 
 <template>
-    <main class="contents lg:pointer-events-none lg:fixed lg:inset-0 lg:z-40 lg:flex">
+    <header class="contents lg:pointer-events-none lg:fixed lg:inset-0 lg:z-40 lg:flex">
         <div class="contents lg:pointer-events-auto lg:block lg:w-72 lg:px-6 lg:pb-8 lg:pt-3 lg:overflow-y-auto xl:w-80 sidebar-border">
             <HeaderLayout />
             <nav class="hidden lg:block">
@@ -29,7 +29,7 @@
                 <SidebarLayout />
             </nav>
         </div>
-    </main>
+    </header>
 </template>
 
 <style scoped>
