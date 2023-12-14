@@ -9,9 +9,9 @@
 
 <style scoped>
 .search-icon {
-    @apply absolute text-zinc-500 dark:text-gray-light left-2 top-1/2 h-6 w-6 stroke-current transform -translate-y-1/2;
+    @apply absolute text-color-light/50 dark:text-color-dark/50 left-2 top-1/2 h-6 w-6 stroke-current transform -translate-y-1/2;
 }
 .search-input {
-    @apply h-8 w-full rounded-xl bg-light pl-10 py-3 pr-3 text-zinc-500 dark:text-gray-light dark:placeholder-zinc-600 ring-1 ring-zinc-900/10 transition focus:outline-none focus:ring-1 focus:ring-gray-light dark:bg-light/5 dark:ring-inset dark:ring-white/10 lg:flex;
+    @apply h-8 w-full pl-10 py-3 pr-3 rounded-lg bg-light dark:bg-dark text-color-light/70 dark:text-color-dark/70 placeholder-color-light/30 dark:placeholder-color-dark/30;
 }
 </style>
