@@ -16,7 +16,7 @@
 
 <template>
     <div class="hidden lg:block absolute p-1 top-11 right-8 mt-2 rounded-md bg-light dark:bg-dark" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button">
-        <button type="button" class="absolute top-4 right-5 h-5 w-5 rounded-md transition hover:bg-hover-bg-light/40 dark:hover:bg-hover-bg-dark/40 ui-not-focus-visible:outline-none" aria-label="Close User Menu" @click="closeUserPopup">
+        <button type="button" class="absolute top-4 right-5 h-5 w-5 rounded-md transition hover:bg-black/5 dark:hover:bg-white/10 ui-not-focus-visible:outline-none" aria-label="Close User Menu" @click="closeUserPopup">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 stroke-color-light dark:stroke-color-dark">
                 <title>Close</title>
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -26,12 +26,12 @@
             <img class="h-12 w-12 rounded-full" :src="avatar" :alt="`${fullName}`">
             <div class="flex flex-col">
                 <h4 class="block px-4 text-sm text-color-light dark:text-color-dark w-48 truncate">{{ fullName }}</h4>
-                <a :href="`mailto:${email}`" class="block px-4 text-xs text-link-light dark:text-link-dark hover:text-hover-light dark:hover:text-hover-dark w-48 truncate" @click="closeUserPopup">{{ email }}</a>
+                <a :href="`mailto:${email}`" class="block px-4 text-xs link-color w-48 truncate" @click="closeUserPopup">{{ email }}</a>
             </div>
         </div>
         <nav class="flex justify-between px-4 py-2">
-            <RouterLink to="/account" class="text-sm text-link-light dark:text-link-dark hover:text-hover-light dark:hover:text-hover-dark" role="menuitem" @click="closeUserPopup">Account</RouterLink>
-            <RouterLink to="/sign-out" class="text-sm text-link-light dark:text-link-dark hover:text-hover-light dark:hover:text-hover-dark" role="menuitem" @click="closeUserPopup">Sign Out</RouterLink>
+            <RouterLink to="/account" class="text-sm link-color" role="menuitem" @click="closeUserPopup">Account</RouterLink>
+            <RouterLink to="/sign-out" class="text-sm link-color" role="menuitem" @click="closeUserPopup">Sign Out</RouterLink>
         </nav>
     </div>
 </template>
