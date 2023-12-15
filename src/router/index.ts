@@ -1,12 +1,15 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 
-import Dashboard from '@/views/pages/DashboardPage.vue';
-
 const routes: Array<RouteRecordRaw> = [
 	{
 		path: '/',
-		name: 'Dashboard',
-		component: Dashboard
+		name: 'dashboard',
+		component: () => import('@/views/pages/DashboardPage.vue')
+	},
+	{
+		path: '/all-members',
+		name: 'all-members',
+		component: () => import('@/views/pages/team/AllMembersPage.vue')
 	}
 ];
 
