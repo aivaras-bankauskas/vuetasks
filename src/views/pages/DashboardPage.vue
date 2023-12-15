@@ -1,9 +1,7 @@
 <script setup lang="ts">
-    import { defineAsyncComponent } from 'vue';
     import ProjectCard from '@/components/cards/ProjectCard.vue';
     import UserList from '@/components/lists/UserList.vue';
-
-    const SectionLayout = defineAsyncComponent(() => import('@/views/layouts/SectionLayout.vue'));
+    import SectionLayout from '@/views/layouts/SectionLayout.vue';
 </script>
 
 <template>
