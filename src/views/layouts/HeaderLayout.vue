@@ -25,7 +25,7 @@
     <div class="hidden lg:flex">
         <CompanyNameLink :data="data" link-to="/" span-class="text-2xl" />
     </div>
-    <div class="fixed inset-x-0 top-0 z-50 flex h-14 items-center justify-between gap-4 px-4 sm:px-6 lg:left-72 lg:z-30 lg:px-8 xl:left-80 transition nav-background">
+    <div class="fixed inset-x-0 top-0 z-50 flex h-14 items-center justify-between gap-4 px-4 sm:px-6 lg:left-72 lg:z-30 lg:px-8 xl:left-80 transition nav-background link">
         <div class="flex items-center gap-5 lg:hidden">
             <HamburgerIcon />
             <CompanyNameLink :data="data" link-to="/" :class="{ 'hidden': toggleStore.isSearchShown }" span-class="text-xl" />

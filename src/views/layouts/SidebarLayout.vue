@@ -4,9 +4,9 @@
 </script>
 
 <template>
-    <ul role="list" class="my-10 mx-6 lg:mx-0 pb-36 lg:pb-0">
+    <ul role="list" class="my-10 mx-6 lg:mx-0 pb-36 lg:pb-0 link">
         <li class="relative border-b lg:border-none border-divider-light dark:border-divider-dark pb-6">
-            <h2 class="text-sm font-semibold text-color-light dark:text-color-dark">Navigation</h2>
+            <h2 class="text-sm font-semibold">Navigation</h2>
             <div class="relative mt-3">
                 <ul role="list" class="border-l border-divider-light dark:border-divider-dark m-0 p-0">
                     <li class="relative">
