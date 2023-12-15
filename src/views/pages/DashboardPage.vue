@@ -1,13 +1,15 @@
 <script setup lang="ts">
+    import { defineAsyncComponent } from 'vue';
     import ProjectCard from '@/components/cards/ProjectCard.vue';
     import UserList from '@/components/lists/UserList.vue';
+
+    const SectionLayout = defineAsyncComponent(() => import('@/views/layouts/SectionLayout.vue'));
 </script>
 
 <template>
     <main class="flex-auto text-color-light dark:text-color-dark">
-        <div class="flex h-full flex-col pb-10 pt-12">
-            <section class="mb-16 xl:max-w-none">
-                <h2 class="scroll-mt-24 pb-3 border-b border-divider-light dark:border-divider-dark">Projects</h2>
+        <div class="flex h-full flex-col py-12">
+            <SectionLayout title="Projects">
                 <div class="not-prose mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-4">
                     <ProjectCard
                         title="Project 1"
@@ -30,10 +32,9 @@
                         link-to="/project-4"
                     />
                 </div>
-            </section>
-            <section class="mb-10 xl:max-w-none">
-                <h2 class="scroll-mt-24 pb-3 border-b border-divider-light dark:border-divider-dark">Team</h2>
-                <div class="not-prose mt-4 rounded-2xl bg-light dark:bg-dark">
+            </SectionLayout>
+            <SectionLayout title="Team">
+                <div class="not-prose mt-8 rounded-2xl bg-light dark:bg-dark">
                     <ul role="list" class="divide-y divide-divider-light dark:divide-divider-dark px-4 py-2">
                         <li class="flex justify-between gap-x-6 py-5">
                             <UserList
@@ -97,7 +98,7 @@
                         </li>
                     </ul>
                 </div>
-            </section>
+            </SectionLayout>
         </div>
     </main>
 </template>
