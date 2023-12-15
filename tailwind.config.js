@@ -27,7 +27,7 @@ export default {
 				'light': '#ffffff',
 				'dark': '#18181b',
 				'primary': '#34D399',
-				'secondary': '#9ca3af',
+				'secondary': '#a1a1aa',
 				'success': '#22c55e',
 				'danger': '#e05263',
 				'danger-light': '#fb7185',
