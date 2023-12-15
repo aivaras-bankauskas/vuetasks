@@ -2,9 +2,9 @@
     import { useToggleStore } from '@/store/toggleStore';
 
     defineProps<{
-        fullName: string;
-        email: string;
-        avatar: string;
+        fullName: string,
+        email: string,
+        avatar: string,
     }>();
 
     const toggleStore = useToggleStore();

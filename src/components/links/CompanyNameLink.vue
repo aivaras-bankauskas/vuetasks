@@ -1,10 +1,10 @@
 <script setup lang="ts">
     defineProps<{
         data: {
-            companyName: string;
-        };
-        linkTo: string;
-        spanClass: string;
+            companyName: string,
+        },
+        linkTo: string,
+        spanClass: string,
     }>();
 </script>
 
