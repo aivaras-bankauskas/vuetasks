@@ -10,7 +10,7 @@
 
 <template>
     <RouterLink
-        :aria-label="`Go to ${data.companyName} page`"
+        aria-label="Go to dashboard"
         class="sm:block text-primary dark:text-primary"
         active-class="text-primary dark:text-primary"
         :to="linkTo"

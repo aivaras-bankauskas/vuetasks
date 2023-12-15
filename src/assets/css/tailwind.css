@@ -6,3 +6,15 @@ input:focus {
     outline: none;
     box-shadow: none;
 }
+
+.link {
+    @apply text-link-light/70 dark:text-link-dark/60;
+}
+
+.link-hover {
+    @apply link hover:text-link-light dark:hover:text-link-dark;
+}
+
+.link-hover-primary {
+    @apply link hover:text-primary dark:hover:text-primary;
+}

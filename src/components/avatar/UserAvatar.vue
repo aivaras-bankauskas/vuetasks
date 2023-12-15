@@ -24,7 +24,7 @@
 <template>
     <div
         :class="[
-            'h-8 w-8 hover:ring-4 hover:ring-zinc-900/5 dark:hover:ring-white/5 rounded-full cursor-pointer',
+            'h-8 w-8 hover:ring-4 hover:ring-black/5 dark:hover:ring-white/20 rounded-full cursor-pointer',
             {
                 'hidden xxs:hidden sm:flex': toggleStore.isSearchShown,
                 'hidden xxs:flex lg:hidden': !toggleStore.isSearchShown
@@ -32,11 +32,11 @@
         ]"
     >
         <RouterLink to="/account">
-            <img class="h-8 w-8 rounded-full bg-gray-50" :src="props.data.avatar" :alt="fullName">
+            <img class="h-8 w-8 rounded-full" :src="props.data.avatar" :alt="fullName">
         </RouterLink>
     </div>
-    <div class="hidden lg:flex h-8 w-8 hover:ring-4 hover:ring-zinc-900/5 dark:hover:ring-white/5 rounded-full cursor-pointer">
-        <img class="h-8 w-8 rounded-full bg-gray-50" :src="props.data.avatar" :alt="fullName" tabindex="0" @click="toggleUserPopup">
+    <div class="h-8 w-8 hidden lg:flex hover:ring-4 hover:ring-black/5 dark:hover:ring-white/20 rounded-full cursor-pointer">
+        <img class="h-8 w-8 rounded-full" :src="props.data.avatar" :alt="fullName" tabindex="0" @click="toggleUserPopup">
     </div>
     <UserPopupCard v-if="toggleStore.isUserPopupOpen" :full-name="fullName" :email="props.data.email" :avatar="props.data.avatar" />
 </template>
