@@ -1,6 +1,6 @@
 <script setup lang="ts">
     import { computed } from 'vue';
-    import OnlineStatusBadge from '../badges/OnlineStatusBadge.vue';
+    import ImageAvatar from '../avatar/ImageAvatar.vue';
 
     const props = defineProps<{
         image: string,
@@ -17,8 +17,13 @@
 <template>
     <div class="flex min-w-0 gap-x-4">
         <div class="relative">
-            <img class="h-12 w-12 flex-none rounded-full" :src="image" :alt="fullName">
-            <OnlineStatusBadge :online-status="onlineStatus" position-class="w-2.5 h-2.5 absolute bottom-0 left-9" />
+            <ImageAvatar
+                class="h-12 w-12 flex-none rounded-full"
+                :img-source="image"
+                :alt-source="fullName"
+                :online-status="onlineStatus"
+                online-badge
+            />
         </div>
         <div class="min-w-0 flex-auto">
             <p class="text-sm font-semibold leading-6 text-color-light dark:text-color-dark">{{ fullName }}</p>
