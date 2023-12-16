@@ -5,7 +5,7 @@
 
 <template>
     <div class="w-full">
-        <div class="h-full lg:ml-72 xl:ml-80">
+        <div class="h-full lg:ml-64 xl:ml-72">
             <MainLayout />
             <div class="relative flex h-full flex-col px-4 pt-14 sm:px-6 lg:px-8">
                 <RouterView />
