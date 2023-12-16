@@ -26,7 +26,7 @@
                                 last-name="Foster"
                                 email="michael.foster@example.com"
                                 position="Co-Founder / CTO"
-                                online-status="20min"
+                                online-status="20 min."
                             />
                         </li>
                         <li class="flex justify-between gap-x-6 py-5">
@@ -46,7 +46,7 @@
                                 last-name="Walton"
                                 email="lindsay.walton@example.com"
                                 position="Project Manager"
-                                online-status="5 min"
+                                online-status="5 min."
                             />
                         </li>
                         <li class="flex justify-between gap-x-6 py-5">
@@ -76,7 +76,7 @@
                                 last-name="Webb"
                                 email="devon.webb@example.com"
                                 position="Backend Developer"
-                                online-status="15 min"
+                                online-status="15 min."
                             />
                         </li>
                         <li class="flex justify-between gap-x-6 py-5">
@@ -106,7 +106,7 @@
                                 last-name="Schmidt"
                                 email="hellen.schmidt@example.com"
                                 position="Frontend Developer"
-                                online-status="17 min"
+                                online-status="17 min."
                             />
                         </li>
                     </ul>
