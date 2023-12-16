@@ -22,7 +22,7 @@
         },
         textColor: {
             type: String,
-            default: 'link-hover-primary'
+            default: 'hover:text-primary'
         },
         activeText: {
             type: String,

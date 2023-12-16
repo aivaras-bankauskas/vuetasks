@@ -15,7 +15,8 @@
         firstName: 'Tom',
         lastName: 'Cook',
         email: 'tom.cook@example.com',
-        avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+        avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        onlineStatus: 'online'
     });
 
     const toggleStore = useToggleStore();
@@ -25,7 +26,7 @@
     <div class="hidden lg:flex">
         <CompanyNameLink :data="data" link-to="/" span-class="text-2xl" />
     </div>
-    <div class="fixed inset-x-0 top-0 z-50 flex h-14 items-center justify-between gap-4 px-4 sm:px-6 lg:left-72 lg:z-30 lg:px-8 xl:left-80 transition nav-background">
+    <div class="fixed inset-x-0 top-0 z-50 flex h-14 items-center justify-between gap-4 px-4 sm:px-6 lg:left-64 lg:z-30 lg:px-8 xl:left-72 transition nav-background link">
         <div class="flex items-center gap-5 lg:hidden">
             <HamburgerIcon />
             <CompanyNameLink :data="data" link-to="/" :class="{ 'hidden': toggleStore.isSearchShown }" span-class="text-xl" />
