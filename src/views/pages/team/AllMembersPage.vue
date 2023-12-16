@@ -13,10 +13,10 @@
                             <UserList
                                 image="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
                                 first-name="Leslie"
-                                last-name="Alexander"
-                                email="leslie.alexander@example.com"
+                                last-name="Foster"
+                                email="leslie.foster@example.com"
                                 position="Co-Founder / CEO"
-                                online-status="3h"
+                                online-status="online"
                             />
                         </li>
                         <li class="flex justify-between gap-x-6 py-5">
@@ -35,7 +35,7 @@
                                 first-name="Dries"
                                 last-name="Vincent"
                                 email="dries.vincent@example.com"
-                                position="Business Relations"
+                                position="Project Manager"
                                 online-status="online"
                             />
                         </li>
@@ -45,18 +45,8 @@
                                 first-name="Lindsay"
                                 last-name="Walton"
                                 email="lindsay.walton@example.com"
-                                position="Front-end Developer"
-                                online-status="8h"
-                            />
-                        </li>
-                        <li class="flex justify-between gap-x-6 py-5">
-                            <UserList
-                                image="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
-                                first-name="Courtney"
-                                last-name="Henry"
-                                email="courtney.henry@example.com"
-                                position="Designer"
-                                online-status="5min"
+                                position="Project Manager"
+                                online-status="5 min"
                             />
                         </li>
                         <li class="flex justify-between gap-x-6 py-5">
@@ -65,8 +55,58 @@
                                 first-name="Tom"
                                 last-name="Cook"
                                 email="tom.cook@example.com"
-                                position="Director of Product"
+                                position="UI/UX Designer"
                                 online-status="online"
+                            />
+                        </li>
+                        <li class="flex justify-between gap-x-6 py-5">
+                            <UserList
+                                image="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
+                                first-name="Courtney"
+                                last-name="Henry"
+                                email="courtney.henry@example.com"
+                                position="DevOps Engineer"
+                                online-status="online"
+                            />
+                        </li>
+                        <li class="flex justify-between gap-x-6 py-5">
+                            <UserList
+                                image="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&amp;auto=format&amp;fit=facearea&amp;facepad=2.25&amp;w=256&amp;h=256&amp;q=80"
+                                first-name="Devon"
+                                last-name="Webb"
+                                email="devon.webb@example.com"
+                                position="Backend Developer"
+                                online-status="15 min"
+                            />
+                        </li>
+                        <li class="flex justify-between gap-x-6 py-5">
+                            <UserList
+                                image="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                first-name="Arlene"
+                                last-name="Mccoy"
+                                email="arlene.mccoy@example.com"
+                                position="Backend Developer"
+                                online-status="online"
+                            />
+                        </li>
+                        <li class="flex justify-between gap-x-6 py-5">
+                            <UserList
+                                image="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                first-name="Wade"
+                                last-name="Cooper"
+                                email="wade.cooper@example.com"
+                                position="Frontend Developer"
+                                online-status="online"
+                            />
+                        </li>
+                        <li class="flex justify-between gap-x-6 py-5">
+                            <UserList
+                                image="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                first-name="Hellen"
+                                last-name="Schmidt"
+                                email="hellen.schmidt@example.com"
+                                position="Frontend Developer"
+                                online-status="17 min"
                             />
                         </li>
                     </ul>
