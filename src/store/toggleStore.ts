@@ -4,7 +4,6 @@ export const useToggleStore = defineStore({
 	id: 'toggle',
 	state: () => ({
 		isNavigationOpen: false,
-		isUserPopupOpen: false,
 		isSearchShown: false
 	}),
 	actions: {
@@ -19,12 +18,6 @@ export const useToggleStore = defineStore({
 		closeNavigation() {
 			this.isNavigationOpen = false;
 			document.body.classList.remove('overflow-hidden');
-		},
-		toggleUserPopup() {
-			this.isUserPopupOpen = !this.isUserPopupOpen;
-		},
-		closeUserPopup() {
-			this.isUserPopupOpen = false;
 		},
 		showSearchInput() {
 			this.isSearchShown = true;

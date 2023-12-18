@@ -16,27 +16,21 @@
                         </ul>
                     </li>
                     <li class="relative">
-                        <div class="navbar-text"><span class="truncate">Team</span></div>
-                        <ul role="list">
-                            <NavigationLink title="All Members" link-to="/all-members" show-border-if-active />
-                            <NavigationLink title="My Team" link-to="/my-team" show-border-if-active />
-                        </ul>
-                    </li>
-                    <li class="relative">
                         <div aria-current="page" class="navbar-text"><span class="truncate">Projects</span></div>
                         <ul role="list">
-                            <NavigationLink title="All Projects" link-to="/all-projects" show-border-if-active />
-                            <NavigationLink title="Assigned to Me" link-to="/assigned-projects" show-border-if-active />
+                            <NavigationLink title="Projects" link-to="/projects" show-border-if-active />
                         </ul>
                     </li>
                     <li class="relative">
                         <div aria-current="page" class="navbar-text"><span class="truncate">Tasks</span></div>
                         <ul role="list">
-                            <NavigationLink title="All Tasks" link-to="/all-tasks" show-border-if-active />
-                            <NavigationLink title="Assigned to Me" link-to="/assigned-tasks" show-border-if-active />
-                            <NavigationLink title="Opened Tasks" link-to="/opened-tasks" show-border-if-active />
-                            <NavigationLink title="In Progress Tasks" link-to="/in-progress-tasks" show-border-if-active />
-                            <NavigationLink title="Closed Tasks" link-to="/closed-tasks" show-border-if-active />
+                            <NavigationLink title="Tasks" link-to="/tasks" show-border-if-active />
+                        </ul>
+                    </li>
+                    <li class="relative">
+                        <div class="navbar-text"><span class="truncate">Team</span></div>
+                        <ul role="list">
+                            <NavigationLink title="Team" link-to="/team" show-border-if-active />
                         </ul>
                     </li>
                 </ul>
