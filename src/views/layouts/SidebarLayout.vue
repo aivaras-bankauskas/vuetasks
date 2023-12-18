@@ -16,12 +16,6 @@
                         </ul>
                     </li>
                     <li class="relative">
-                        <div class="navbar-text"><span class="truncate">Team</span></div>
-                        <ul role="list">
-                            <NavigationLink title="Team" link-to="/team" show-border-if-active />
-                        </ul>
-                    </li>
-                    <li class="relative">
                         <div aria-current="page" class="navbar-text"><span class="truncate">Projects</span></div>
                         <ul role="list">
                             <NavigationLink title="Projects" link-to="/projects" show-border-if-active />
@@ -31,6 +25,12 @@
                         <div aria-current="page" class="navbar-text"><span class="truncate">Tasks</span></div>
                         <ul role="list">
                             <NavigationLink title="Tasks" link-to="/tasks" show-border-if-active />
+                        </ul>
+                    </li>
+                    <li class="relative">
+                        <div class="navbar-text"><span class="truncate">Team</span></div>
+                        <ul role="list">
+                            <NavigationLink title="Team" link-to="/team" show-border-if-active />
                         </ul>
                     </li>
                 </ul>
