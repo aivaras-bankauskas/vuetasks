@@ -7,19 +7,14 @@ const routes: Array<RouteRecordRaw> = [
 		component: () => import('@/views/pages/dashboard/DashboardPage.vue')
 	},
 	{
-		path: '/all-members',
-		name: 'all-members',
-		component: () => import('@/views/pages/team/AllMembersPage.vue')
+		path: '/team',
+		name: 'team',
+		component: () => import('@/views/pages/team/TeamPage.vue')
 	},
 	{
-		path: '/my-team',
-		name: 'my-team',
-		component: () => import('@/views/pages/team/MyTeamPage.vue')
-	},
-	{
-		path: '/all-projects',
-		name: 'all-projects',
-		component: () => import('@/views/pages/projects/AllProjectsPage.vue')
+		path: '/projects',
+		name: 'projects',
+		component: () => import('@/views/pages/projects/ProjectsPage.vue')
 	}
 ];
 

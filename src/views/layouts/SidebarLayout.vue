@@ -18,15 +18,13 @@
                     <li class="relative">
                         <div class="navbar-text"><span class="truncate">Team</span></div>
                         <ul role="list">
-                            <NavigationLink title="All Members" link-to="/all-members" show-border-if-active />
-                            <NavigationLink title="My Team" link-to="/my-team" show-border-if-active />
+                            <NavigationLink title="Team" link-to="/team" show-border-if-active />
                         </ul>
                     </li>
                     <li class="relative">
                         <div aria-current="page" class="navbar-text"><span class="truncate">Projects</span></div>
                         <ul role="list">
-                            <NavigationLink title="All Projects" link-to="/all-projects" show-border-if-active />
-                            <NavigationLink title="Assigned to Me" link-to="/assigned-projects" show-border-if-active />
+                            <NavigationLink title="Projects" link-to="/projects" show-border-if-active />
                         </ul>
                     </li>
                     <li class="relative">
