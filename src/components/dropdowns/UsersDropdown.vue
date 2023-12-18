@@ -9,10 +9,10 @@
                 <RouterLink class="link-hover" to="#">
                     <div class="flex items-center">
                         <ImageAvatar
-                            class="h-5 w-5 flex-shrink-0"
+                            class="h-7 w-7 flex-shrink-0"
                             img-source="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
                             alt-source="Lindsay Walton"
-                            badge-position="w-1.5 h-1.5 absolute bottom-0 left-3.5"
+                            badge-position="w-1.5 h-1.5 absolute bottom-0 left-5"
                             online-status="5 min."
                             online-badge
                         />
@@ -29,10 +29,10 @@
                 <RouterLink class="link-hover" to="#">
                     <div class="flex items-center">
                         <ImageAvatar
-                            class="h-5 w-5 flex-shrink-0"
+                            class="h-7 w-7 flex-shrink-0"
                             img-source="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                             alt-source="Tom Cook"
-                            badge-position="w-1.5 h-1.5 absolute bottom-0 left-3.5"
+                            badge-position="w-1.5 h-1.5 absolute bottom-0 left-5"
                             online-status="online"
                             online-badge
                         />
@@ -49,10 +49,10 @@
                 <RouterLink class="link-hover" to="#">
                     <div class="flex items-center">
                         <ImageAvatar
-                            class="h-5 w-5 flex-shrink-0"
+                            class="h-7 w-7 flex-shrink-0"
                             img-source="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                             alt-source="Courtney Henry"
-                            badge-position="w-1.5 h-1.5 absolute bottom-0 left-3.5"
+                            badge-position="w-1.5 h-1.5 absolute bottom-0 left-5"
                             online-status="online"
                             online-badge
                         />
@@ -69,10 +69,10 @@
                 <RouterLink class="link-hover" to="#">
                     <div class="flex items-center">
                         <ImageAvatar
-                            class="h-5 w-5 flex-shrink-0"
+                            class="h-7 w-7 flex-shrink-0"
                             img-source="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80"
                             alt-source="Devon Webb"
-                            badge-position="w-1.5 h-1.5 absolute bottom-0 left-3.5"
+                            badge-position="w-1.5 h-1.5 absolute bottom-0 left-5"
                             online-status="15 min."
                             online-badge
                         />
@@ -89,10 +89,10 @@
                 <RouterLink class="link-hover" to="#">
                     <div class="flex items-center">
                         <ImageAvatar
-                            class="h-5 w-5 flex-shrink-0"
+                            class="h-7 w-7 flex-shrink-0"
                             img-source="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                             alt-source="Arlene Mccoy"
-                            badge-position="w-1.5 h-1.5 absolute bottom-0 left-3.5"
+                            badge-position="w-1.5 h-1.5 absolute bottom-0 left-5"
                             online-status="online"
                             online-badge
                         />
@@ -109,10 +109,10 @@
                 <RouterLink class="link-hover" to="#">
                     <div class="flex items-center">
                         <ImageAvatar
-                            class="h-5 w-5 flex-shrink-0"
+                            class="h-7 w-7 flex-shrink-0"
                             img-source="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                             alt-source="Wade Cooper"
-                            badge-position="w-1.5 h-1.5 absolute bottom-0 left-3.5"
+                            badge-position="w-1.5 h-1.5 absolute bottom-0 left-5"
                             online-status="online"
                             online-badge
                         />
@@ -129,10 +129,10 @@
                 <RouterLink class="link-hover" to="#">
                     <div class="flex items-center">
                         <ImageAvatar
-                            class="h-5 w-5 flex-shrink-0"
+                            class="h-7 w-7 flex-shrink-0"
                             img-source="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                             alt-source="Hellen Schmidt"
-                            badge-position="w-1.5 h-1.5 absolute bottom-0 left-3.5"
+                            badge-position="w-1.5 h-1.5 absolute bottom-0 left-5"
                             online-status="17 min."
                             online-badge
                         />
