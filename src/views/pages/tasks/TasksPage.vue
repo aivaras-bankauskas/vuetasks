@@ -18,6 +18,33 @@
                                 priority="High"
                             />
                         </li>
+                        <li class="flex justify-between gap-x-6 py-5">
+                            <TaskList
+                                task-title="GRA-124"
+                                task-description="Create a new GraphQL API for the project management app. And then, create a new project for the API. And then, create a new task for the project."
+                                project-name="GraphQL API"
+                                status="In Progress"
+                                priority="High"
+                            />
+                        </li>
+                        <li class="flex justify-between gap-x-6 py-5">
+                            <TaskList
+                                task-title="GRA-125"
+                                task-description="Create a new GraphQL API for the project management app. And then, create a new project for the API. And then, create a new task for the project."
+                                project-name="GraphQL API"
+                                status="In Progress"
+                                priority="High"
+                            />
+                        </li>
+                        <li class="flex justify-between gap-x-6 py-5">
+                            <TaskList
+                                task-title="GRA-126"
+                                task-description="Create a new GraphQL API for the project management app. And then, create a new project for the API. And then, create a new task for the project."
+                                project-name="GraphQL API"
+                                status="In Progress"
+                                priority="High"
+                            />
+                        </li>
                     </ul>
                 </div>
             </SectionLayout>
