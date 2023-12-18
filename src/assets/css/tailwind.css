@@ -8,7 +8,7 @@ input:focus {
 }
 
 .link {
-    @apply text-link-light/70 dark:text-link-dark/50;
+    @apply text-link-light/60 dark:text-link-dark/50;
 }
 
 .link-hover {
