@@ -47,7 +47,7 @@
                 <ThemeIcon class="theme-icon-class" light-class="stroke-color-light" dark-class="stroke-color-dark" />
                 <NotificationIcon :class="{ 'hidden': toggleStore.isSearchShown }" />
             </div>
-            <UserAvatar :data="data" />
+            <UserAvatar class="hidden xxs:block" :data="data" />
         </div>
     </div>
 </template>
