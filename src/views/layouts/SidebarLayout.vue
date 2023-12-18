@@ -30,11 +30,7 @@
                     <li class="relative">
                         <div aria-current="page" class="navbar-text"><span class="truncate">Tasks</span></div>
                         <ul role="list">
-                            <NavigationLink title="All Tasks" link-to="/all-tasks" show-border-if-active />
-                            <NavigationLink title="Assigned to Me" link-to="/assigned-tasks" show-border-if-active />
-                            <NavigationLink title="Opened Tasks" link-to="/opened-tasks" show-border-if-active />
-                            <NavigationLink title="In Progress Tasks" link-to="/in-progress-tasks" show-border-if-active />
-                            <NavigationLink title="Closed Tasks" link-to="/closed-tasks" show-border-if-active />
+                            <NavigationLink title="Tasks" link-to="/tasks" show-border-if-active />
                         </ul>
                     </li>
                 </ul>
