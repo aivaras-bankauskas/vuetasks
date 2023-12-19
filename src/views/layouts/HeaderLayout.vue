@@ -20,19 +20,20 @@
     });
 
     const toggleStore = useToggleStore();
+    const searchId = 'headerSearch';
 </script>
 
 <template>
     <div class="hidden lg:flex">
         <CompanyNameLink :data="data" link-to="/" span-class="text-2xl" />
     </div>
-    <div class="fixed inset-x-0 top-0 z-50 flex h-14 items-center justify-between gap-4 px-4 sm:px-6 lg:left-64 lg:z-30 lg:px-8 xl:left-72 transition nav-background link">
+    <div class="fixed inset-x-0 top-0 z-50 h-14 flex justify-between items-center gap-4 px-4 sm:px-6 lg:left-64 lg:z-30 lg:px-8 xl:left-72 transition nav-background link">
         <div class="flex items-center gap-5 lg:hidden">
             <HamburgerIcon />
-            <CompanyNameLink :data="data" link-to="/" :class="{ 'hidden': toggleStore.isSearchShown }" span-class="text-xl" />
+            <CompanyNameLink :data="data" link-to="/" :class="{ 'hidden': toggleStore.isSearchShown[searchId] }" span-class="text-xl" />
         </div>
-        <div :class="{ 'hidden': !toggleStore.isSearchShown }" class="max-w-md flex-auto sm:block">
-            <SearchInput />
+        <div :class="{ 'hidden': !toggleStore.isSearchShown[searchId] }" class="max-w-md flex-auto sm:block">
+            <SearchInput placeholder="Search something..." input-class="border border-body-light dark:border-body-dark/50" />
         </div>
         <div class="flex items-center gap-5">
             <nav class="hidden lg:block">
@@ -43,11 +44,11 @@
             </nav>
             <div class="hidden lg:block md:h-5 md:w-px md:bg-divider-light md:dark:bg-divider-dark"></div>
             <div class="flex gap-4">
-                <SearchIcon />
+                <SearchIcon :search-id="searchId" />
                 <ThemeIcon class="theme-icon-class" light-class="stroke-color-light" dark-class="stroke-color-dark" />
-                <NotificationIcon :class="{ 'hidden': toggleStore.isSearchShown }" />
+                <NotificationIcon :class="{ 'hidden': toggleStore.isSearchShown[searchId] }" />
             </div>
-            <UserAvatar :data="data" />
+            <UserAvatar class="hidden xxs:block" :data="data" />
         </div>
     </div>
 </template>

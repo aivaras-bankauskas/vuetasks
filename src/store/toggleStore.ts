@@ -4,7 +4,7 @@ export const useToggleStore = defineStore({
 	id: 'toggle',
 	state: () => ({
 		isNavigationOpen: false,
-		isSearchShown: false
+		isSearchShown: {} as Record<string, boolean>
 	}),
 	actions: {
 		toggleNavigation() {
@@ -19,11 +19,16 @@ export const useToggleStore = defineStore({
 			this.isNavigationOpen = false;
 			document.body.classList.remove('overflow-hidden');
 		},
-		showSearchInput() {
-			this.isSearchShown = true;
+		showSearchInput(id: string) {
+			this.isSearchShown[id] = true;
 		},
-		hideSearchInput() {
-			this.isSearchShown = false;
+		hideSearchInput(id: string) {
+			this.isSearchShown[id] = false;
+		},
+		hideAllSearchInputs() {
+			for (const key in this.isSearchShown) {
+				this.isSearchShown[key] = false;
+			}
 		}
 	}
 });

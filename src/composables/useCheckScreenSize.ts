@@ -26,7 +26,7 @@ const useCheckScreenSize = (): CheckScreenSize => {
 			toggleStore.closeNavigation();
 			document.documentElement.classList.remove('overflow-hidden');
 		} else if (isTabletScreen.value) {
-			toggleStore.hideSearchInput();
+			toggleStore.hideAllSearchInputs();
 		}
 	};
 

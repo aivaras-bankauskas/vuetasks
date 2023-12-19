@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div class="z-10 max-h-60 mt-8 bg-transparent">
+    <div class="z-10 max-h-60 pt-8 bg-transparent">
         <ul class="mt-2 max-h-56 w-48 overflow-auto rounded-md bg-light dark:bg-dark py-1 text-base shadow-lg ring-1 ring-secondary ring-opacity-5 focus:outline-none sm:text-sm" tabindex="-1" role="listbox" aria-labelledby="listbox-label" aria-activedescendant="listbox-option-3">
             <li id="listbox-option-0" class="text-gray-900 relative cursor-default select-none py-2 pl-3 pr-9" role="option">
                 <RouterLink class="link-hover" to="#">
