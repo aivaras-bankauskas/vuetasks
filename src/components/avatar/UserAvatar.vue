@@ -33,7 +33,7 @@
             />
         </RouterLink>
         <AccountDropdown
-            class="absolute top-6 right-0 hidden lg:group-hover:block lg:hover:block"
+            class="absolute top-6 right-0 hidden xl:group-hover:block xl:hover:block"
             :full-name="fullName"
             :email="props.data.email"
             :avatar="props.data.avatar"
