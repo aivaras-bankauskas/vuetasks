@@ -1,7 +1,7 @@
 <script setup lang="ts">
     defineProps<{
-        type: 'button' | 'submit' | 'reset',
-        buttonText: string
+        type: 'button' | 'submit' | 'reset';
+        buttonText: string;
     }>();
 </script>
 

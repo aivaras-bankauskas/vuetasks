@@ -3,12 +3,12 @@
     import ImageAvatar from '../avatar/ImageAvatar.vue';
 
     const props = defineProps<{
-        image: string,
-        firstName: string,
-        lastName: string,
-        email: string,
-        position: string,
-        onlineStatus: string,
+        image: string;
+        firstName: string;
+        lastName: string;
+        email: string;
+        position: string;
+        onlineStatus: string;
     }>();
 
     const fullName = computed(() => `${props.firstName} ${props.lastName}`);

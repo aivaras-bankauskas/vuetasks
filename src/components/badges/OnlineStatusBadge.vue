@@ -1,7 +1,7 @@
 <script setup lang="ts">
     defineProps<{
-        onlineStatus: string,
-        positionClass: string,
+        onlineStatus: string;
+        positionClass: string;
     }>();
 </script>
 

@@ -1,8 +1,8 @@
 <script setup lang="ts">
     defineProps<{
-        title: string,
-        description: string,
-        linkTo: string,
+        title: string;
+        description: string;
+        linkTo: string;
     }>();
 </script>
 
