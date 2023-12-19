@@ -15,6 +15,10 @@ input:focus {
     @apply link hover:text-link-light dark:hover:text-link-dark;
 }
 
+.btn-primary {
+    @apply text-white bg-primary hover:bg-primary/80 focus:ring-2 focus:outline-none focus:ring-primary;
+}
+
 .table-data-cell {
     @apply py-5 sm:px-3 truncate max-w-[100px] xxs:max-w-[150px] xs:max-w-[250px] md:max-w-[350px] lg:max-w-[190px] xl:overflow-visible xl:text-ellipsis xl:whitespace-normal;
 }
