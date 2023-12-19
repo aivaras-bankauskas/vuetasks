@@ -32,7 +32,7 @@
             <CompanyNameLink :data="data" link-to="/" :class="{ 'hidden': toggleStore.isSearchShown }" span-class="text-xl" />
         </div>
         <div :class="{ 'hidden': !toggleStore.isSearchShown }" class="max-w-md flex-auto sm:block">
-            <SearchInput />
+            <SearchInput input-class="border border-body-light dark:border-body-dark/50" />
         </div>
         <div class="flex items-center gap-5">
             <nav class="hidden lg:block">
