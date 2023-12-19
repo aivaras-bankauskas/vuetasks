@@ -14,3 +14,7 @@ input:focus {
 .link-hover {
     @apply link hover:text-link-light dark:hover:text-link-dark;
 }
+
+.table-data-cell {
+    @apply py-5 sm:px-3 truncate max-w-[100px] xxs:max-w-[150px] xs:max-w-[250px] md:max-w-[350px] lg:max-w-[190px] xl:overflow-visible xl:text-ellipsis xl:whitespace-normal;
+}
