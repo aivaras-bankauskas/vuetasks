@@ -6,5 +6,9 @@
 </script>
 
 <template>
-    <button :type="type">{{ buttonText }}</button>
+    <button :type="type">
+        <slot name="frontIcon" />
+        {{ buttonText }}
+        <slot name="backIcon" />
+    </button>
 </template>
