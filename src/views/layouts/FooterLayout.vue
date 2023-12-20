@@ -1,5 +1,8 @@
 <script setup lang="ts">
+    import { computed } from 'vue';
     import BaseButton from '@/components/buttons/BaseButton.vue';
+
+    const currentYear = computed(() => new Date().getFullYear());
 </script>
 
 <template>
@@ -31,7 +34,7 @@
             </RouterLink>
         </div>
         <div class="flex flex-col items-center justify-between gap-5 border-t border-zinc-900/5 pt-8 dark:border-gray-dark sm:flex-row">
-            <p class="text-xs text-zinc-600 dark:text-zinc-400">© Copyright <!-- -->2024<!-- -->. All rights reserved.</p>
+            <p class="text-xs link">© Copyright {{ currentYear }}. All rights reserved.</p>
         </div>
     </footer>
 </template>
