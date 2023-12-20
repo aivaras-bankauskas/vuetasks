@@ -25,12 +25,12 @@
 
 <template>
     <div class="hidden lg:flex">
-        <CompanyNameLink :data="data" link-to="/" span-class="text-2xl" />
+        <CompanyNameLink :data="data" span-class="text-2xl" />
     </div>
     <div class="fixed inset-x-0 top-0 z-50 h-14 flex justify-between items-center gap-4 px-4 sm:px-6 lg:left-64 lg:z-30 lg:px-8 xl:left-72 transition nav-background link">
         <div class="flex items-center gap-5 lg:hidden">
             <HamburgerIcon />
-            <CompanyNameLink :data="data" link-to="/" :class="{ 'hidden': toggleStore.isSearchShown[searchId] }" span-class="text-xl" />
+            <CompanyNameLink :data="data" :class="{ 'hidden': toggleStore.isSearchShown[searchId] }" span-class="text-xl" />
         </div>
         <div :class="{ 'hidden': !toggleStore.isSearchShown[searchId] }" class="max-w-md flex-auto sm:block">
             <SearchInput placeholder="Search something..." input-class="border border-body-light dark:border-body-dark/50" />
