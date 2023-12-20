@@ -7,32 +7,36 @@
     const currentYear = computed(() => new Date().getFullYear());
     const route = useRoute();
 
-    const navigation = computed(() => navigationRoutes.map((route) => route.children?.map((child) => child.path)).flat());
+    const navigation = computed(() => navigationRoutes.map(route => route.children ? route.children : [route]).flat());
 
-    const currentIndex = computed(() => navigation.value.findIndex((path) => path === route.path));
+    const currentIndex = computed(() => navigation.value.findIndex(routeObj => routeObj.path === route.path));
 
     const previousRoute = computed(() => {
         const prevIndex = currentIndex.value - 1;
+        const prevRouteObj = prevIndex >= 0 ? navigation.value[prevIndex] : navigation.value[navigation.value.length - 1];
 
-        return prevIndex >= 0 ? navigation.value[prevIndex] : navigation.value[navigation.value.length - 1];
+        return {
+            path: prevRouteObj.path,
+            title: prevRouteObj.meta?.title || 'Previous'
+        };
     });
 
     const nextRoute = computed(() => {
         const nextIndex = currentIndex.value + 1;
+        const nextRouteObj = nextIndex < navigation.value.length ? navigation.value[nextIndex] : navigation.value[0];
 
-        return nextIndex < navigation.value.length ? navigation.value[nextIndex] : navigation.value[0];
+        return {
+            path: nextRouteObj.path,
+            title: nextRouteObj.meta?.title || 'Next'
+        };
     });
-
 </script>
 
 <template>
     <footer class="mx-auto w-full space-y-10 pb-16">
         <div class="ml-auto flex justify-between gap-3">
-            <RouterLink
-                aria-label="Previous: [Description of Previous Page]"
-                :to="previousRoute || '/dashboard'"
-            >
-                <BaseButton type="button" button-text="Previous" class="footer-button link-hover" title="Previous">
+            <RouterLink :to="previousRoute.path" aria-label="Previous: [Description of Previous Page]">
+                <BaseButton type="button" :button-text="(previousRoute.title as string)" class="footer-button link-hover" :title="previousRoute.title">
                     <template #frontIcon>
                         <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="mt-0.5 h-5 w-5 -ml-1 rotate-180">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="m11.5 6.5 3 3.5m0 0-3 3.5m3-3.5h-9"></path>
@@ -40,11 +44,8 @@
                     </template>
                 </BaseButton>
             </RouterLink>
-            <RouterLink
-                aria-label="Next: [Description of Next Page]"
-                :to="nextRoute || '/dashboard'"
-            >
-                <BaseButton type="button" button-text="Next" class="footer-button link-hover" title="Next">
+            <RouterLink :to="nextRoute.path" aria-label="Next: [Description of Next Page]">
+                <BaseButton type="button" :button-text="(nextRoute.title as string)" class="footer-button link-hover" :title="nextRoute.title">
                     <template #backIcon>
                         <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="mt-0.5 h-5 w-5 -mr-1">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="m11.5 6.5 3 3.5m0 0-3 3.5m3-3.5h-9"></path>
