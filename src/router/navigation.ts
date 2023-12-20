@@ -2,7 +2,7 @@ import { RouteRecordRaw } from 'vue-router';
 
 const navigationRoutes: RouteRecordRaw[] = [
 	{
-		path: '',
+		path: '/dashboard-group',
 		name: 'dashboardGroup',
 		meta: { title: 'Dashboard' },
 		children: [
@@ -15,7 +15,7 @@ const navigationRoutes: RouteRecordRaw[] = [
 		]
 	},
 	{
-		path: '',
+		path: '/projects-group',
 		name: 'projectsGroup',
 		meta: { title: 'Projects' },
 		children: [
@@ -28,7 +28,7 @@ const navigationRoutes: RouteRecordRaw[] = [
 		]
 	},
 	{
-		path: '',
+		path: '/tasks-group',
 		name: 'tasksGroup',
 		meta: { title: 'Tasks' },
 		children: [
@@ -41,7 +41,7 @@ const navigationRoutes: RouteRecordRaw[] = [
 		]
 	},
 	{
-		path: '',
+		path: '/team-group',
 		name: 'teamGroup',
 		meta: { title: 'Team' },
 		children: [
