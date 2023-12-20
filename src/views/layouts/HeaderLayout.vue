@@ -56,8 +56,8 @@
         <div class="flex items-center gap-5">
             <nav class="hidden lg:block">
                 <ul role="list" class="flex items-center gap-8">
-                    <NavigationLink title="API" link-to="/api" class="text-sm leading-5" />
-                    <NavigationLink title="Documentation" link-to="/documentation" class="text-sm leading-5" />
+                    <NavigationLink title="API" link-to="/api" class="text-sm leading-5 hover:text-primary" />
+                    <NavigationLink title="Documentation" link-to="/documentation" class="text-sm leading-5 hover:text-primary" />
                 </ul>
             </nav>
             <div class="hidden lg:block md:h-5 md:w-px md:bg-divider-light md:dark:bg-divider-dark"></div>
