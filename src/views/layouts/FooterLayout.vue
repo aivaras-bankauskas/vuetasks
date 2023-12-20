@@ -2,9 +2,9 @@
     <footer class="mx-auto w-full space-y-10 pb-16">
         <div class="ml-auto flex justify-between gap-3">
             <RouterLink
-                class="inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition rounded-full bg-zinc-100 py-1 px-3 text-zinc-900 hover:bg-zinc-200 dark:bg-dark/40 dark:text-zinc-400 dark:ring-1 dark:ring-inset dark:ring-dark dark:hover:bg-dark dark:hover:text-zinc-300"
+                class="footer-button link-hover"
                 aria-label="Previous: [Description of Previous Page]"
-                to="/previous"
+                to="#"
             >
                 <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="mt-0.5 h-5 w-5 -ml-1 rotate-180">
                     <title>Previous</title>
@@ -13,9 +13,9 @@
                 <span>Previous</span>
             </RouterLink>
             <RouterLink
-                class="inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition rounded-full bg-zinc-100 py-1 px-3 text-zinc-900 hover:bg-zinc-200 dark:bg-dark/40 dark:text-zinc-400 dark:ring-1 dark:ring-inset dark:ring-dark dark:hover:bg-dark dark:hover:text-zinc-300"
+                class="footer-button link-hover"
                 aria-label="Next: [Description of Next Page]"
-                to="/next"
+                to="#"
             >
                 <span>Next</span>
                 <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="mt-0.5 h-5 w-5 -mr-1">
@@ -29,3 +29,9 @@
         </div>
     </footer>
 </template>
+
+<style scoped>
+    .footer-button {
+        @apply inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition rounded-full py-1 px-3 bg-light dark:bg-dark hover:bg-light/50 dark:hover:bg-dark/70 focus:ring-2 focus:ring-light focus:dark:ring-dark;
+    }
+</style>
