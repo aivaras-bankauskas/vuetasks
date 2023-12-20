@@ -1,4 +1,5 @@
 <script setup lang="ts">
+    import navigationRoutes from '@/router/navigation';
     import NavigationLink from '@/components/links/NavigationLink.vue';
     import ThemeIcon from '@/components/icons/ThemeIcon.vue';
 </script>
@@ -9,28 +10,16 @@
             <h2 class="text-sm font-semibold">Navigation</h2>
             <div class="relative mt-3">
                 <ul role="list" class="border-l border-divider-light dark:border-divider-dark m-0 p-0">
-                    <li class="relative">
-                        <div class="navbar-text"><span class="truncate">Dashboard</span></div>
+                    <li v-for="(parent, parentIndex) in navigationRoutes" :key="parentIndex" class="relative">
+                        <div class="navbar-text"><span class="truncate">{{ parent?.meta?.title }}</span></div>
                         <ul role="list">
-                            <NavigationLink title="Dashboard" link-to="/" show-border-if-active />
-                        </ul>
-                    </li>
-                    <li class="relative">
-                        <div aria-current="page" class="navbar-text"><span class="truncate">Projects</span></div>
-                        <ul role="list">
-                            <NavigationLink title="Projects" link-to="/projects" show-border-if-active />
-                        </ul>
-                    </li>
-                    <li class="relative">
-                        <div aria-current="page" class="navbar-text"><span class="truncate">Tasks</span></div>
-                        <ul role="list">
-                            <NavigationLink title="Tasks" link-to="/tasks" show-border-if-active />
-                        </ul>
-                    </li>
-                    <li class="relative">
-                        <div class="navbar-text"><span class="truncate">Team</span></div>
-                        <ul role="list">
-                            <NavigationLink title="Team" link-to="/team" show-border-if-active />
+                            <NavigationLink
+                                v-for="(child, childIndex) in parent.children"
+                                :key="childIndex"
+                                :title="(child?.meta?.title as string)"
+                                :link-to="child?.path"
+                                show-border-if-active
+                            />
                         </ul>
                     </li>
                 </ul>
