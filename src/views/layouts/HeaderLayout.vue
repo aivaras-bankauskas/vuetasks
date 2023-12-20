@@ -21,6 +21,19 @@
 
     const toggleStore = useToggleStore();
     const searchId = 'headerSearch';
+
+    const closeNavigation = (): void => {
+        toggleStore.closeNavigation();
+    };
+
+    const closeSearch = (): void => {
+        toggleStore.hideAllSearchInputs();
+    };
+
+    const closeSearchAndNavigation = (): void => {
+        closeNavigation();
+        closeSearch();
+    };
 </script>
 
 <template>
@@ -29,8 +42,13 @@
     </div>
     <div class="fixed inset-x-0 top-0 z-50 h-14 flex justify-between items-center gap-4 px-4 sm:px-6 lg:left-64 lg:z-30 lg:px-8 xl:left-72 transition nav-background link">
         <div class="flex items-center gap-5 lg:hidden">
-            <HamburgerIcon />
-            <CompanyNameLink :data="data" :class="{ 'hidden': toggleStore.isSearchShown[searchId] }" span-class="text-xl" />
+            <HamburgerIcon @click="closeSearch" />
+            <CompanyNameLink
+                :data="data"
+                :class="{ 'hidden': toggleStore.isSearchShown[searchId] }"
+                span-class="text-xl"
+                @click="closeNavigation"
+            />
         </div>
         <div :class="{ 'hidden': !toggleStore.isSearchShown[searchId] }" class="max-w-md flex-auto sm:block">
             <SearchInput placeholder="Search something..." input-class="border border-body-light dark:border-body-dark/50" />
@@ -38,17 +56,17 @@
         <div class="flex items-center gap-5">
             <nav class="hidden lg:block">
                 <ul role="list" class="flex items-center gap-8">
-                    <NavigationLink title="API" link-to="/api" base-class="text-sm leading-5" />
-                    <NavigationLink title="Documentation" link-to="/documentation" base-class="text-sm leading-5" />
+                    <NavigationLink title="API" link-to="/api" class="text-sm leading-5" />
+                    <NavigationLink title="Documentation" link-to="/documentation" class="text-sm leading-5" />
                 </ul>
             </nav>
             <div class="hidden lg:block md:h-5 md:w-px md:bg-divider-light md:dark:bg-divider-dark"></div>
             <div class="flex gap-4">
-                <SearchIcon :search-id="searchId" />
+                <SearchIcon :search-id="searchId" @click="closeNavigation" />
                 <ThemeIcon class="theme-icon-class" light-class="stroke-color-light" dark-class="stroke-color-dark" />
-                <NotificationIcon :class="{ 'hidden': toggleStore.isSearchShown[searchId] }" />
+                <NotificationIcon :class="{ 'hidden': toggleStore.isSearchShown[searchId] }" @click="closeNavigation" />
             </div>
-            <UserAvatar class="hidden xxs:block" :data="data" />
+            <UserAvatar class="hidden xxs:block" :data="data" @click="closeSearchAndNavigation" />
         </div>
     </div>
 </template>
