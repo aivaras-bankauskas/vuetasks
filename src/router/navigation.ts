@@ -1,0 +1,26 @@
+import { RouteRecordRaw } from 'vue-router';
+
+const navigationRoutes: Array<RouteRecordRaw> = [
+	{
+		path: '/',
+		name: 'dashboard',
+		component: () => import('@/views/pages/dashboard/DashboardPage.vue')
+	},
+	{
+		path: '/team',
+		name: 'team',
+		component: () => import('@/views/pages/team/TeamPage.vue')
+	},
+	{
+		path: '/projects',
+		name: 'projects',
+		component: () => import('@/views/pages/projects/ProjectsPage.vue')
+	},
+	{
+		path: '/tasks',
+		name: 'tasks',
+		component: () => import('@/views/pages/tasks/TasksPage.vue')
+	}
+];
+
+export default navigationRoutes;
