@@ -1,26 +1,13 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+import navigationRoutes from './navigation';
 
-const routes: Array<RouteRecordRaw> = [
+const routes: RouteRecordRaw[] = [
 	{
 		path: '/',
-		name: 'dashboard',
-		component: () => import('@/views/pages/dashboard/DashboardPage.vue')
+		name: 'root',
+		redirect: { name: 'dashboard' }
 	},
-	{
-		path: '/team',
-		name: 'team',
-		component: () => import('@/views/pages/team/TeamPage.vue')
-	},
-	{
-		path: '/projects',
-		name: 'projects',
-		component: () => import('@/views/pages/projects/ProjectsPage.vue')
-	},
-	{
-		path: '/tasks',
-		name: 'tasks',
-		component: () => import('@/views/pages/tasks/TasksPage.vue')
-	}
+	...navigationRoutes
 ];
 
 const router = createRouter({

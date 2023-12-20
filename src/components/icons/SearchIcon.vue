@@ -2,7 +2,7 @@
     import { useToggleStore } from '@/store/toggleStore';
 
     const props = defineProps<{
-        searchId: string
+        searchId: string;
     }>();
 
     const toggleStore = useToggleStore();

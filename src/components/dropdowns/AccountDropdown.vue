@@ -1,8 +1,8 @@
 <script setup lang="ts">
     defineProps<{
-        fullName: string,
-        email: string,
-        avatar: string,
+        fullName: string;
+        email: string;
+        avatar: string;
     }>();
 </script>
 

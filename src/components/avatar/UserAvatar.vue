@@ -5,11 +5,11 @@
 
     const props = defineProps<{
         data: {
-            firstName: string,
-            lastName: string,
-            email: string,
-            avatar: string,
-            onlineStatus: string,
+            firstName: string;
+            lastName: string;
+            email: string;
+            avatar: string;
+            onlineStatus: string;
         }
     }>();
 

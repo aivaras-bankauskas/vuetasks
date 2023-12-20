@@ -6,7 +6,12 @@
 <template>
     <main class="flex-auto text-color-light dark:text-color-dark">
         <div class="flex h-full flex-col py-12">
-            <SectionLayout title="Tasks">
+            <SectionLayout
+                title="Tasks"
+                button-text="Create Task"
+                search-id="tasksSearch"
+                is-actions
+            >
                 <div class="not-prose mt-8 rounded-2xl overflow-x-auto xl:overflow-x-visible bg-light dark:bg-dark">
                     <div class="relative rounded-2xl p-4">
                         <TaskTable />

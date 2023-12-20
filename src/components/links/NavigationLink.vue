@@ -12,18 +12,6 @@
             type: String,
             required: true
         },
-        listClass: {
-            type: String,
-            default: ''
-        },
-        baseClass: {
-            type: String,
-            default: 'flex justify-between gap-2 py-1 pr-3 text-sm transition pl-7'
-        },
-        textColor: {
-            type: String,
-            default: 'hover:text-primary'
-        },
         activeText: {
             type: String,
             default: 'text-primary dark:text-primary'
@@ -49,16 +37,13 @@
 </script>
 
 <template>
-    <li :class="listClass">
-        <RouterLink
-            :class="[baseClass, textColor]"
-            :active-class="`${activeText} ${borderClass}`"
-            :to="linkTo"
-            tabindex="0"
-            @click="closeNavigation"
-        >
-            <slot />
-            <span>{{ title }}</span>
-        </RouterLink>
-    </li>
+    <RouterLink
+        :active-class="`${activeText} ${borderClass}`"
+        :to="linkTo"
+        tabindex="0"
+        @click="closeNavigation"
+    >
+        <slot />
+        <span>{{ title }}</span>
+    </RouterLink>
 </template>
