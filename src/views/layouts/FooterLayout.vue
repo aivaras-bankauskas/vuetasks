@@ -1,8 +1,28 @@
 <script setup lang="ts">
     import { computed } from 'vue';
+    import { useRoute } from 'vue-router';
     import BaseButton from '@/components/buttons/BaseButton.vue';
+    import navigationRoutes from '@/router/navigation.ts';
 
     const currentYear = computed(() => new Date().getFullYear());
+    const route = useRoute();
+
+    const navigation = computed(() => navigationRoutes.map((route) => route.children?.map((child) => child.path)).flat());
+
+    const currentIndex = computed(() => navigation.value.findIndex((path) => path === route.path));
+
+    const previousRoute = computed(() => {
+        const prevIndex = currentIndex.value - 1;
+
+        return prevIndex >= 0 ? navigation.value[prevIndex] : navigation.value[navigation.value.length - 1];
+    });
+
+    const nextRoute = computed(() => {
+        const nextIndex = currentIndex.value + 1;
+
+        return nextIndex < navigation.value.length ? navigation.value[nextIndex] : navigation.value[0];
+    });
+
 </script>
 
 <template>
@@ -10,7 +30,7 @@
         <div class="ml-auto flex justify-between gap-3">
             <RouterLink
                 aria-label="Previous: [Description of Previous Page]"
-                to="#"
+                :to="previousRoute || '/dashboard'"
             >
                 <BaseButton type="button" button-text="Previous" class="footer-button link-hover" title="Previous">
                     <template #frontIcon>
@@ -22,7 +42,7 @@
             </RouterLink>
             <RouterLink
                 aria-label="Next: [Description of Next Page]"
-                to="#"
+                :to="nextRoute || '/dashboard'"
             >
                 <BaseButton type="button" button-text="Next" class="footer-button link-hover" title="Next">
                     <template #backIcon>
