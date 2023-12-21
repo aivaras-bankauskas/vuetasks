@@ -44,6 +44,6 @@
         @click="closeNavigation"
     >
         <slot />
-        <span>{{ title }}</span>
+        <span class="truncate">{{ title }}</span>
     </RouterLink>
 </template>
