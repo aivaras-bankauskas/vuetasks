@@ -9,7 +9,7 @@
             <MainLayout />
             <div class="relative h-full pt-14 px-4 sm:px-6 lg:px-8">
                 <RouterView />
-                <FooterLayout class="w-full lg:pl-64 xl:pl-72 lg:pb-2" />
+                <FooterLayout class="hidden xxs:block w-full lg:pl-64 xl:pl-72 lg:pb-2" />
             </div>
         </div>
     </div>

@@ -32,7 +32,7 @@
 </script>
 
 <template>
-    <footer class="hidden xxs:block fixed bottom-0 right-0 bg-body-light dark:bg-body-dark">
+    <footer class="fixed bottom-0 right-0 bg-body-light dark:bg-body-dark">
         <div class="flex justify-between md:justify-center items-center md:gap-14 py-4 px-4 sm:px-6 lg:px-8">
             <RouterLink :to="previousRoute.path" aria-label="Previous: [Description of Previous Page]">
                 <BaseButton type="button" :button-text="(previousRoute.title as string)" class="footer-button link-hover" :title="previousRoute.title">
