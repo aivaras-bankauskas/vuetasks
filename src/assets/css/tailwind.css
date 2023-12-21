@@ -12,7 +12,7 @@ input:focus {
 }
 
 .link-hover {
-    @apply link hover:text-link-light dark:hover:text-link-dark;
+    @apply link hover:text-link-light dark:hover:text-link-dark focus:text-link-light dark:focus:text-link-dark;
 }
 
 .btn-primary {
