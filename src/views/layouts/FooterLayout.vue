@@ -38,7 +38,7 @@
                 <BaseButton type="button" :button-text="(previousRoute.title as string)" class="footer-button link-hover" :title="previousRoute.title">
                     <template #frontIcon>
                         <div class="h-5 w-5">
-                            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="h-5 w-5 -ml-1 rotate-180">
+                            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="h-5 w-5 -ml-1 rotate-180 moz-mt-fix">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="m11.5 6.5 3 3.5m0 0-3 3.5m3-3.5h-9"></path>
                             </svg>
                         </div>
@@ -49,7 +49,7 @@
                 <BaseButton type="button" :button-text="(nextRoute.title as string)" class="footer-button link-hover" :title="nextRoute.title">
                     <template #backIcon>
                         <div class="h-5 w-5">
-                            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="h-5 w-5 -mr-1">
+                            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="h-5 w-5 -mr-1 moz-mt-fix">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="m11.5 6.5 3 3.5m0 0-3 3.5m3-3.5h-9"></path>
                             </svg>
                         </div>
@@ -62,7 +62,9 @@
 
 <style scoped>
     .footer-base-button {
-        @apply flex justify-center gap-1 w-36 pt-1 pb-1.5 px-4 text-sm font-medium transition rounded-full;
+        @apply w-36 pt-1 pb-1.5 px-4 text-sm font-medium transition rounded-full;
+        display: flex;
+        align-items: center;
     }
 
     .footer-button-backgound {
@@ -71,5 +73,11 @@
 
     .footer-button {
         @apply footer-base-button footer-button-backgound;
+    }
+
+    @-moz-document url-prefix() {
+        .moz-mt-fix {
+            margin-top: 1px;
+        }
     }
 </style>
