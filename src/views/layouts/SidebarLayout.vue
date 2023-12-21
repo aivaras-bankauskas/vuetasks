@@ -1,7 +1,14 @@
 <script setup lang="ts">
+    import { useToggleStore } from '@/store/toggleStore';
     import navigationRoutes from '@/router/navigation';
     import NavigationLink from '@/components/links/NavigationLink.vue';
     import ThemeIcon from '@/components/icons/ThemeIcon.vue';
+
+    const toggleStore = useToggleStore();
+
+    const closeNavigation = (): void => {
+        toggleStore.closeNavigation();
+    };
 </script>
 
 <template>
@@ -34,7 +41,7 @@
             </NavigationLink>
         </li>
         <li class="md:hidden my-3">
-            <ThemeIcon class="w-full flex gap-x-3 justify-start items-center text-sm hover:text-primary">
+            <ThemeIcon class="w-full flex gap-x-3 justify-start items-center text-sm hover:text-primary" @click="closeNavigation">
                 <span class="hidden dark:block text-sm">Dark Theme</span>
                 <span class="dark:hidden text-sm">Light Theme</span>
             </ThemeIcon>
