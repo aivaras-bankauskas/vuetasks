@@ -7,7 +7,7 @@
     <div class="w-full">
         <div class="h-full lg:ml-64 xl:ml-72">
             <MainLayout />
-            <div class="relative flex h-full flex-col px-4 pt-14 sm:px-6 lg:px-8">
+            <div class="relative h-full pt-14 px-4 sm:px-6 lg:px-8">
                 <RouterView />
                 <FooterLayout />
             </div>
