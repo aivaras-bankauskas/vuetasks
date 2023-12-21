@@ -4,7 +4,6 @@
     import BaseButton from '@/components/buttons/BaseButton.vue';
     import navigationRoutes from '@/router/navigation.ts';
 
-    const currentYear = computed(() => new Date().getFullYear());
     const route = useRoute();
 
     const navigation = computed(() => navigationRoutes.map(route => route.children ? route.children : [route]).flat());
@@ -33,35 +32,44 @@
 </script>
 
 <template>
-    <footer class="mx-auto w-full space-y-10 pb-16">
-        <div class="ml-auto flex justify-between gap-3">
+    <footer class="hidden xxs:block fixed bottom-0 right-0 w-full lg:pl-64 xl:pl-72 bg-body-light dark:bg-body-dark">
+        <div class="flex justify-between md:justify-center md:gap-14 items-center py-4 lg:pb-10 px-4 sm:px-6 lg:px-8">
             <RouterLink :to="previousRoute.path" aria-label="Previous: [Description of Previous Page]">
                 <BaseButton type="button" :button-text="(previousRoute.title as string)" class="footer-button link-hover" :title="previousRoute.title">
                     <template #frontIcon>
-                        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="mt-0.5 h-5 w-5 -ml-1 rotate-180">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="m11.5 6.5 3 3.5m0 0-3 3.5m3-3.5h-9"></path>
-                        </svg>
+                        <div class="h-5 w-5">
+                            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="mt-0.5 h-5 w-5 -ml-1 rotate-180">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="m11.5 6.5 3 3.5m0 0-3 3.5m3-3.5h-9"></path>
+                            </svg>
+                        </div>
                     </template>
                 </BaseButton>
             </RouterLink>
             <RouterLink :to="nextRoute.path" aria-label="Next: [Description of Next Page]">
                 <BaseButton type="button" :button-text="(nextRoute.title as string)" class="footer-button link-hover" :title="nextRoute.title">
                     <template #backIcon>
-                        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="mt-0.5 h-5 w-5 -mr-1">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="m11.5 6.5 3 3.5m0 0-3 3.5m3-3.5h-9"></path>
-                        </svg>
+                        <div class="h-5 w-5">
+                            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="mt-0.5 h-5 w-5 -mr-1">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="m11.5 6.5 3 3.5m0 0-3 3.5m3-3.5h-9"></path>
+                            </svg>
+                        </div>
                     </template>
                 </BaseButton>
             </RouterLink>
-        </div>
-        <div class="flex flex-col items-center justify-between gap-5 border-t border-zinc-900/5 pt-8 dark:border-gray-dark sm:flex-row">
-            <p class="text-xs link">© Copyright {{ currentYear }}. All rights reserved.</p>
         </div>
     </footer>
 </template>
 
 <style scoped>
+    .footer-base-button {
+        @apply flex justify-center gap-1 w-36 pt-1 pb-1.5 px-4 text-sm font-medium transition rounded-full;
+    }
+
+    .footer-button-backgound {
+        @apply bg-light dark:bg-dark lg:hover:bg-light/50 lg:dark:hover:bg-dark/70 focus:bg-light dark:focus:bg-dark;
+    }
+
     .footer-button {
-        @apply flex gap-1 py-1 px-5 text-sm font-medium transition rounded-full bg-light dark:bg-dark hover:bg-light/50 dark:hover:bg-dark/70 focus:ring-2 focus:ring-light focus:dark:ring-dark;
+        @apply footer-base-button footer-button-backgound;
     }
 </style>
