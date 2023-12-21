@@ -8,7 +8,7 @@
 <template>
     <button :type="type">
         <slot name="frontIcon" />
-        {{ buttonText }}
+        <span class="truncate">{{ buttonText }}</span>
         <slot name="backIcon" />
     </button>
 </template>
