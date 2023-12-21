@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+a, button {
+    -webkit-tap-highlight-color: transparent;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
 input:focus {
     outline: none;
     box-shadow: none;
