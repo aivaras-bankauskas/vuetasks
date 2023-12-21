@@ -33,12 +33,12 @@
 
 <template>
     <footer class="hidden xxs:block fixed bottom-0 right-0 w-full lg:pl-64 xl:pl-72 bg-body-light dark:bg-body-dark">
-        <div class="flex justify-between md:justify-center md:gap-14 items-center py-4 lg:pb-10 px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between md:justify-center items-center md:gap-14 py-4 lg:pb-10 px-4 sm:px-6 lg:px-8">
             <RouterLink :to="previousRoute.path" aria-label="Previous: [Description of Previous Page]">
                 <BaseButton type="button" :button-text="(previousRoute.title as string)" class="footer-button link-hover" :title="previousRoute.title">
                     <template #frontIcon>
                         <div class="h-5 w-5">
-                            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="mt-0.5 h-5 w-5 -ml-1 rotate-180">
+                            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="h-5 w-5 -ml-1 rotate-180">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="m11.5 6.5 3 3.5m0 0-3 3.5m3-3.5h-9"></path>
                             </svg>
                         </div>
@@ -49,7 +49,7 @@
                 <BaseButton type="button" :button-text="(nextRoute.title as string)" class="footer-button link-hover" :title="nextRoute.title">
                     <template #backIcon>
                         <div class="h-5 w-5">
-                            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="mt-0.5 h-5 w-5 -mr-1">
+                            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="h-5 w-5 -mr-1">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="m11.5 6.5 3 3.5m0 0-3 3.5m3-3.5h-9"></path>
                             </svg>
                         </div>
