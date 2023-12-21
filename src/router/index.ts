@@ -15,4 +15,9 @@ const router = createRouter({
 	routes
 });
 
+router.beforeEach((to, _from, next) => {
+	document.title = `FlowForge | ${to.meta.title}`;
+	next();
+});
+
 export default router;
