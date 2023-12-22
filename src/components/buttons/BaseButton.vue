@@ -6,9 +6,9 @@
 </script>
 
 <template>
-    <button :type="type">
+    <button :type="type" class="flex justify-center items-center gap-1">
         <slot name="frontIcon" />
-        {{ buttonText }}
+        <span class="truncate">{{ buttonText }}</span>
         <slot name="backIcon" />
     </button>
 </template>
