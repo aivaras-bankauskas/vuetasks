@@ -49,21 +49,21 @@ const users:User[] = [
 	},
 	{
 		id: '6',
-		avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-		firstName: 'Tom',
-		lastName: 'Cook',
-		position: 'UI/UX Designer',
-		onlineStatus: 'online',
-		email: 'tom.cook@flowforge.com'
-	},
-	{
-		id: '7',
 		avatar: 'https://images.unsplash.com/photo-1564805280186-5d7056d538ca?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 		firstName: 'Alba',
 		lastName: 'Jimenez',
 		position: 'DevOps Engineer',
 		onlineStatus: 'online',
 		email: 'alba.jimenez@flowforge.com'
+	},
+	{
+		id: '7',
+		avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+		firstName: 'Tom',
+		lastName: 'Cook',
+		position: 'UI/UX Designer',
+		onlineStatus: 'online',
+		email: 'tom.cook@flowforge.com'
 	},
 	{
 		id: '8',

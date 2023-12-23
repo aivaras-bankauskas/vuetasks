@@ -20,7 +20,7 @@
                                 :image="user.avatar"
                                 :first-name="user.firstName"
                                 :last-name="user.lastName"
-                                :email="user.email"
+                                :email="(user.email as string)"
                                 :position="user.position"
                                 :online-status="user.onlineStatus"
                             />
