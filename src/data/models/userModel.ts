@@ -5,7 +5,7 @@ type User = {
     lastName: string;
     position: string;
     onlineStatus: string;
-    email: string;
+    email?: string;
     password?: string;
     createdAt?: string;
     updatedAt?: string;
