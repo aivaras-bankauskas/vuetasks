@@ -48,7 +48,7 @@
                                             :alt-source="`${user.firstName} ${user.lastName}`"
                                         />
                                     </RouterLink>
-                                    <UsersDropdown :users="(item.users as User[])" class="absolute top-0 left-0 hidden lg:group-hover:block lg:hover:block" />
+                                    <UsersDropdown :users="(item.users as User[])" class="absolute top-0 -left-1 hidden lg:group-hover:block lg:hover:block" />
                                 </div>
                             </template>
                         </BaseTable>
