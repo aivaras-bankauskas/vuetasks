@@ -3,10 +3,10 @@ import Project from '@/data/models/projectModel';
 const projects: Project[] = [
 	{
 		id: '1',
-		name: 'BluePeak',
+		name: 'Blue Peak',
 		key: 'BLP',
 		category: 'App',
-		tasks: 192,
+		tasks: 37,
 		users: [
 			{
 				id: '5',
@@ -69,10 +69,10 @@ const projects: Project[] = [
 	},
 	{
 		id: '2',
-		name: 'EcoNest',
+		name: 'Eco Nest',
 		key: 'ECN',
 		category: 'Full Stack',
-		tasks: 40,
+		tasks: 48,
 		users: [
 			{
 				id: '2',
@@ -119,10 +119,10 @@ const projects: Project[] = [
 	},
 	{
 		id: '3',
-		name: 'SolarFlare',
+		name: 'Solar Flare',
 		key: 'SLF',
 		category: 'Frontend',
-		tasks: 72,
+		tasks: 0,
 		users: [
 			{
 				id: '1',
@@ -162,10 +162,10 @@ const projects: Project[] = [
 	},
 	{
 		id: '4',
-		name: 'QuantumBridge',
+		name: 'Quantum Bridge',
 		key: 'QTB',
 		category: 'Backend',
-		tasks: 94,
+		tasks: 64,
 		users: [
 			{
 				id: '4',
@@ -212,10 +212,10 @@ const projects: Project[] = [
 	},
 	{
 		id: '5',
-		name: 'BrightHorizon',
+		name: 'Bright Horizon',
 		key: 'BHR',
 		category: 'Frontend',
-		tasks: 68,
+		tasks: 0,
 		users: [
 			{
 				id: '1',
@@ -255,10 +255,10 @@ const projects: Project[] = [
 	},
 	{
 		id: '6',
-		name: 'PixelPulse',
+		name: 'Pixel Pulse',
 		key: 'PXP',
 		category: 'Backend',
-		tasks: 143,
+		tasks: 2,
 		users: [
 			{
 				id: '4',
@@ -297,10 +297,10 @@ const projects: Project[] = [
 	},
 	{
 		id: '7',
-		name: 'TerraFirma',
+		name: 'Terra Firma',
 		key: 'TRF',
 		category: 'Full Stack',
-		tasks: 207,
+		tasks: 6,
 		users: [
 			{
 				id: '5',
@@ -372,10 +372,10 @@ const projects: Project[] = [
 	},
 	{
 		id: '8',
-		name: 'AeroStream',
+		name: 'Aero Stream',
 		key: 'AST',
 		category: 'Frontend',
-		tasks: 164,
+		tasks: 0,
 		users: [
 			{
 				id: '2',
@@ -430,10 +430,10 @@ const projects: Project[] = [
 	},
 	{
 		id: '9',
-		name: 'GreenLeaf',
+		name: 'Green Leaf',
 		key: 'GLF',
 		category: 'App',
-		tasks: 50,
+		tasks: 39,
 		users: [
 			{
 				id: '2',
@@ -488,10 +488,10 @@ const projects: Project[] = [
 	},
 	{
 		id: '10',
-		name: 'CyberNex',
+		name: 'Cyber Nex',
 		key: 'CBN',
 		category: 'Frontend',
-		tasks: 73,
+		tasks: 75,
 		users: [
 			{
 				id: '4',
