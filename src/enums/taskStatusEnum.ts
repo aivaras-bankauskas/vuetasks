@@ -8,8 +8,8 @@ enum TaskStatusEnum {
     DeployedToServer = 'Deployed to Server',
     Testing = 'Testing',
     Returned = 'Returned',
-    Completed = 'completed',
-    closed = 'closed'
+    Completed = 'Completed',
+    closed = 'Closed'
 }
 
 export default TaskStatusEnum;

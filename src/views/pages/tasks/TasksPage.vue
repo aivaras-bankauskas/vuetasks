@@ -2,17 +2,20 @@
     import { reactive } from 'vue';
     import SectionLayout from '@/views/layouts/SectionLayout.vue';
     import BaseTable from '@/components/tables/BaseTable.vue';
+    import tasks from '@/data/mocks/taskMock';
 
-    const tableData = reactive([
-        {
-            id: 1,
-            name: 'TRF-168',
-            description: 'Create a new GraphQL API for the project management app.',
-            project: 'TerraFirma',
-            status: 'In Progress',
-            priority: 'High'
-        }
-    ]);
+    const tableData = reactive(tasks);
+
+    // const tableData = reactive([
+    //     {
+    //         id: 1,
+    //         name: 'TRF-168',
+    //         description: 'Create a new GraphQL API for the project management app.',
+    //         project: 'TerraFirma',
+    //         status: 'In Progress',
+    //         priority: 'High'
+    //     }
+    // ]);
 
     const tableColumns = [
         { key: 'name', title: 'Name' },
